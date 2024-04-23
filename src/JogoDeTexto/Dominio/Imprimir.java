@@ -15,7 +15,17 @@ public class Imprimir {
     public void imprimirTexto02(){
 
 
-        System.out.println("vamos pegar algumas informaçoes suas:");
+        System.out.println("Perfeito! Agora que conhecemos um pouco mais sobre você, é hora de equipar-se para a aventura que se aproxima.\n" +
+                " Como bravos heróis, a escolha da arma é crucial para enfrentar os desafios que virão.\n" +
+                " Por favor, selecione sua arma inicial entre as opções disponíveis.\n");
+
+    }
+
+    public void imprimirTexto04(){
+
+        System.out.println(" Lembre-se, sua escolha determinará sua abordagem nos combates e desafios que encontrar pela frente.\n" +
+                " Escolha sabiamente, pois seu destino aguarda sua coragem e habilidade.\n" +
+                " Qual será sua arma de escolha, aventureiro?\n");
 
     }
 

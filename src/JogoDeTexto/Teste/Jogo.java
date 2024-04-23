@@ -5,12 +5,18 @@ import JogoDeTexto.Dominio.Inimigo;
 import JogoDeTexto.Dominio.Pessoa;
 import java.util.Scanner;
 
-public class Teste {
+public class Jogo {
 
-    public static void main(String[] args) {
+    private Scanner scanner;
+    public Jogo(){
+
+        scanner = new Scanner(System.in);
+
+    }
+
+    public  void iniciar (){
 
         // criando scanner para interaçao
-        Scanner scanner = new Scanner(System.in);
 
         Imprimir imprime = new Imprimir();
 
@@ -59,6 +65,35 @@ public class Teste {
             inimigo2.setVida(200);
             inimigo2.setForca(30);
             inimigo2.setInteligencia(4);
+
+            imprime.imprimirTexto02();
+            imprime.imprimirTexto04();
+            System.out.println("arco: +5 dano \n"+ "espada: +7 dano \n"+ "adaga: + 10 dano \n" );
+            System.out.println("qual sua escolhar? ");
+            char arma = scanner.next().charAt(1);
+
+            if (arma == 'r'){
+
+                jogador.setDano(jogador.getDano() + 5);
+
+            }
+            else if (arma == 's'){
+
+                jogador.setDano(jogador.getDano() + 7);
+
+            }
+            else if (arma == 'd'){
+
+                jogador.setDano(jogador.getDano() + 10);
+
+            }
+
+            System.out.println("suas estastisticas sao:");
+            System.out.println("seu dano agora é " + jogador.getDano() );
+            System.out.println("sua força agora é " + jogador.getForca());
+            System.out.println("sua inteligencia é "+ jogador.getInteligencia());
+            System.out.println("sua vida continua "+ jogador.getVida());
+
 
 
 
@@ -144,7 +179,7 @@ public class Teste {
 
                 } else if (inimigo.getVida() <= 0) {
 
-                    System.out.println("parabens " + jogador.getNome() + " vc ganhou, vai para a fase 3\n\n");
+                    System.out.println("parabens " + jogador.getNome() + " vc ganhou, vai para a fase 3\n");
                     // aqui podemos adicionar a logica para a segunda fase
                 }
 
