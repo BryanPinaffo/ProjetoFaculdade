@@ -50,6 +50,7 @@ public class Jogo {
             //criando inimigo medio
             Inimigo inimigo2 = new Inimigo("Inimigo medio",100,200,60,200);
 
+            // criado forma de dano
             Dano dano = new Dano();
 
 
@@ -81,6 +82,7 @@ public class Jogo {
 
 
             // quando a vida do inimigo ou do jogador chegar a zero, saira do while
+            //Metodo para dar e receber dano
             dano.DarDanoOuReceberDano(jogador,inimigo,scanner);
 
             if (jogador.getVida() <= 0) {
@@ -104,6 +106,7 @@ public class Jogo {
                 imprime.imprimirPrimeiraFase02();
 
                 // quando a vida do inimigo ou do jogador chegar a zero, saira do while
+                //Metodo para dar e receber dano
                 dano.DarDanoOuReceberDano(jogador,inimigo2,scanner);
 
                 if (jogador.getVida() <= 0) {
