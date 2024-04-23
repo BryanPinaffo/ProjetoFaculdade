@@ -11,8 +11,6 @@ public class Ser {
     // Construtor da classe Ser
 
 
-    public Ser() {
-    }
 
     public Ser(String nome) {
         this.nome = nome;

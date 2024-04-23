@@ -16,7 +16,6 @@ public class Teste {
 
         imprime.imprimirTexto01();
 
-        imprime.imprimirTexto02();
 
         System.out.println(" digite seu nome: ");
         String nome = scanner.nextLine();
@@ -33,6 +32,7 @@ public class Teste {
 
         imprime.imprimeTexto03();
 
+        // criando do while para opçao de jogar novamente
         do {
             // Criando uma pessoa
             Pessoa jogador = new Pessoa(nome, idade, sexo);
@@ -40,6 +40,7 @@ public class Teste {
             // Criando um inimigo
             Inimigo inimigo = new Inimigo("Inimigo");
 
+            //criando inimigo medio
             Inimigo inimigo2 = new Inimigo("Inimigo medio");
 
 
@@ -61,7 +62,7 @@ public class Teste {
 
 
 
-
+            // quando a vida do inimigo ou do jogador chegar a zero, saira do while
             while (jogador.getVida() > 0 && inimigo.getVida() > 0) {
                 // Atacando o inimigo ou ser atacado
                 System.out.println("Você deseja atacar " + inimigo.getNome() + "? (s/n)");
@@ -98,6 +99,7 @@ public class Teste {
 
                 imprime.imprimirFase02();
 
+                // adicionando as estastiticas do inimigo ao jogador
                 jogador.setDano(jogador.getDano() + inimigo.getDano());
                 jogador.setForca(jogador.getForca() + inimigo.getForca());
                 jogador.setInteligencia(jogador.getInteligencia() + inimigo.getInteligencia());
@@ -110,7 +112,7 @@ public class Teste {
 
                 imprime.imprimeFase02Texto();
 
-
+                        // quando a vida do inimigo ou do jogador chegar a zero, saira do while
                 while (jogador.getVida() > 0 && inimigo2.getVida() > 0) {
                     // Atacando o inimigo ou ser atacado
                     System.out.println("Você deseja atacar " + inimigo2.getNome() + "? (s/n)");

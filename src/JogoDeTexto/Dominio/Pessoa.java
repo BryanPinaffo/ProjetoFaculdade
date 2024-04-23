@@ -11,8 +11,6 @@ public class Pessoa extends Ser {
         super(nome, idade, sexo);
     }
 
-    public Pessoa() {
-    }
 
     public int getDano() {
         return dano;
