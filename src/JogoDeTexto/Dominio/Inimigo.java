@@ -5,8 +5,8 @@ public class Inimigo extends Ser {
     protected int vida;
     protected int inteligencia;
     protected int forca;
-    public Inimigo(String nome, int idade, char sexo ) {
-        super(nome, idade, sexo);
+    public Inimigo(String nome) {
+        super(nome);
     }
 
     public int getDano() {

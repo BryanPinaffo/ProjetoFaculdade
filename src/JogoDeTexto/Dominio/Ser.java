@@ -9,6 +9,15 @@ public class Ser {
 
 
     // Construtor da classe Ser
+
+
+    public Ser() {
+    }
+
+    public Ser(String nome) {
+        this.nome = nome;
+    }
+
     public Ser(String nome, int idade, char sexo) {
         this.nome = nome;
         this.idade = idade;

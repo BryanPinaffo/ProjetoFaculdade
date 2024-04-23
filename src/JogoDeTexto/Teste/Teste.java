@@ -1,5 +1,6 @@
 package JogoDeTexto.Teste;
 
+import JogoDeTexto.Dominio.Imprimir;
 import JogoDeTexto.Dominio.Inimigo;
 import JogoDeTexto.Dominio.Pessoa;
 import java.util.Scanner;
@@ -7,70 +8,154 @@ import java.util.Scanner;
 public class Teste {
 
     public static void main(String[] args) {
-        // Criando uma pessoa
-        Pessoa jogador = new Pessoa("Player", 25, 'M');
 
-        // Criando um inimigo
-        Inimigo inimigo = new Inimigo("Inimigo", 30, 'F');
+        // criando scanner para interaçao
+        Scanner scanner = new Scanner(System.in);
+
+        Imprimir imprime = new Imprimir();
+
+        imprime.imprimirTexto01();
+
+        imprime.imprimirTexto02();
+
+        System.out.println(" digite seu nome: ");
+        String nome = scanner.nextLine();
+
+        System.out.println("digite sua idade: ");
+        int idade = scanner.nextInt();
+
+        // Consumir a nova linha pendente após nextInt()
+        scanner.nextLine();
+
+        System.out.println("digite seu sexo: ");
+        char sexo = scanner.next().charAt(0);
 
 
-        //tributos de cada personagem
-        jogador.setDano(20);
-        jogador.setVida(100);
-        jogador.setForca(15);
-        jogador.setInteligencia(2);
+        imprime.imprimeTexto03();
 
-        inimigo.setDano(30);
-        inimigo.setVida(100);
-        inimigo.setForca(15);
-        inimigo.setInteligencia(2);
+        do {
+            // Criando uma pessoa
+            Pessoa jogador = new Pessoa(nome, idade, sexo);
+
+            // Criando um inimigo
+            Inimigo inimigo = new Inimigo("Inimigo");
+
+            Inimigo inimigo2 = new Inimigo("Inimigo medio");
+
+
+            //tributos de cada personagem
+            jogador.setDano(20);
+            jogador.setVida(100);
+            jogador.setForca(15);
+            jogador.setInteligencia(2);
+
+            inimigo.setDano(30);
+            inimigo.setVida(100);
+            inimigo.setForca(15);
+            inimigo.setInteligencia(2);
+
+            inimigo2.setDano(60);
+            inimigo2.setVida(200);
+            inimigo2.setForca(30);
+            inimigo2.setInteligencia(4);
 
 
 
-        // Atacando o inimigo
-        for (int i = 0; (i < jogador.getVida()) || (i < inimigo.getVida());) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Você deseja atacar " + inimigo.getNome() + "? (s/n)");
-            char resposta = scanner.nextLine().charAt(0);
 
-            if (resposta == 's') {
-                System.out.println("Você atacou " + inimigo.getNome() + "!");
-                inimigo.setVida(inimigo.getVida() - jogador.getDano());
-                System.out.println(inimigo.getNome() + " perdeu " + jogador.getDano() + " de vida.");
+            while (jogador.getVida() > 0 && inimigo.getVida() > 0) {
+                // Atacando o inimigo ou ser atacado
+                System.out.println("Você deseja atacar " + inimigo.getNome() + "? (s/n)");
+                char resposta = scanner.next().charAt(0);
 
-                System.out.println("a vida do inimigo e: " + inimigo.getVida());
-                // Verifica se a vida do Ser atacado chegou a zero
-                if (inimigo.getVida() <= 0) {
-                    System.out.println(inimigo.getNome() + " foi derrotado!");
-                    break; // Encerra o jogo
+                if (resposta == 's') {
+                    //atacando o inimigo
+                    System.out.println("Você atacou " + inimigo.getNome() + "!");
+                    inimigo.setVida(inimigo.getVida() - jogador.getDano());
+                    System.out.println(inimigo.getNome() + " perdeu " + jogador.getDano() + " de vida.");
+
+                    System.out.println("a vida do inimigo e: " + inimigo.getVida());
+
+                } else if (resposta == 'n') {
+                    //inimigo te atacando
+                    System.out.println("Você decidiu não atacar " + inimigo.getNome() + ".");
+                    jogador.setVida(jogador.getVida() - inimigo.getDano());
+
+                    System.out.println("a sua vida e: " + jogador.getVida());
+                } else {
+                    // caso clique em uma tecla errada
+                    System.out.println(" Escolha inválida. Por favor, tente novamente.");
+                    break;
+                }
+            }
+            if (jogador.getVida() <= 0) {
+
+                System.out.println("Fim do jogo!");
+
+            } else if (inimigo.getVida() <= 0) {
+
+                System.out.println("parabens "+ jogador.getNome()+" vc ganhou, vai para a fase 2\n\n");
+                // aqui podemos adicionar a logica para a segunda fase
+
+                imprime.imprimirFase02();
+
+                jogador.setDano(jogador.getDano() + inimigo.getDano());
+                jogador.setForca(jogador.getForca() + inimigo.getForca());
+                jogador.setInteligencia(jogador.getInteligencia() + inimigo.getInteligencia());
+
+                System.out.println("suas estastisticas sao:");
+                System.out.println("seu dano agora é " + jogador.getDano() );
+                System.out.println("sua força agora é " + jogador.getForca());
+                System.out.println("sua inteligencia é "+ jogador.getInteligencia());
+                System.out.println("sua vida continua "+ jogador.getVida());
+
+                imprime.imprimeFase02Texto();
+
+
+                while (jogador.getVida() > 0 && inimigo2.getVida() > 0) {
+                    // Atacando o inimigo ou ser atacado
+                    System.out.println("Você deseja atacar " + inimigo2.getNome() + "? (s/n)");
+                    char resposta = scanner.next().charAt(0);
+
+                    if (resposta == 's') {
+                        //atacando o inimigo
+                        System.out.println("Você atacou " + inimigo2.getNome() + "!");
+                        inimigo2.setVida(inimigo2.getVida() - jogador.getDano());
+                        System.out.println(inimigo2.getNome() + " perdeu " + jogador.getDano() + " de vida.");
+
+                        System.out.println("a vida do inimigo e: " + inimigo2.getVida());
+
+                    } else if (resposta == 'n') {
+                        //inimigo te atacando
+                        System.out.println("Você decidiu não atacar " + inimigo2.getNome() + ".");
+                        jogador.setVida(jogador.getVida() - inimigo2.getDano());
+
+                        System.out.println("a sua vida e: " + jogador.getVida());
+                    } else {
+                        // caso clique em uma tecla errada
+                        System.out.println(" Escolha inválida. Por favor, tente novamente.");
+                        break;
+                    }
+                }
+                if (jogador.getVida() <= 0) {
+
+                    System.out.println("Fim do jogo!");
+
+                } else if (inimigo.getVida() <= 0) {
+
+                    System.out.println("parabens " + jogador.getNome() + " vc ganhou, vai para a fase 3\n\n");
+                    // aqui podemos adicionar a logica para a segunda fase
                 }
 
-            } else if (resposta == 'n') {
-                System.out.println("Você decidiu não atacar " + inimigo.getNome() + ".");
-                jogador.setVida(jogador.getVida() - inimigo.getDano());
-
-                System.out.println("a sua vida e: " + jogador.getVida());
-                    // Verifica se a vida do Ser atacado chegou a zero
-
-                    if (jogador.getVida() <= 0) {
-                        System.out.println(jogador.getNome() + " foi derrotado!");
-                        break; // Encerra o jogo
-                    }
             }
-            else {
-                System.out.println(" vc escolheu nenhuma das alternativas, por gentileza, inicie novamente");
-                break;
-            }
-        }
-        if(jogador.getVida() <= 0){
 
-            System.out.println("Fim do jogo!");
 
-        }
-        else {
+            System.out.println("Deseja jogar novamente? (s/n)");
+        } while (scanner.next().charAt(0) == 's');
+            scanner.close();
 
-            System.out.println("parabens, vc ganhou, vai para a fase 2");
-        }
 
     }
 }
+
+
+
