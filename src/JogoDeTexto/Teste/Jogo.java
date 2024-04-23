@@ -1,5 +1,6 @@
 package JogoDeTexto.Teste;
 
+import JogoDeTexto.Dominio.Dano;
 import JogoDeTexto.Dominio.Imprimir;
 import JogoDeTexto.Dominio.Inimigo;
 import JogoDeTexto.Dominio.Pessoa;
@@ -49,6 +50,7 @@ public class Jogo {
             //criando inimigo medio
             Inimigo inimigo2 = new Inimigo("Inimigo medio",100,200,60,200);
 
+            Dano dano = new Dano();
 
 
             imprime.imprimirInicio03();
@@ -79,31 +81,8 @@ public class Jogo {
 
 
             // quando a vida do inimigo ou do jogador chegar a zero, saira do while
-            while (jogador.getVida() > 0 && inimigo.getVida() > 0) {
-                // Atacando o inimigo ou ser atacado
-                System.out.println("Você deseja atacar " + inimigo.getNome() + "? (s/n)");
-                char resposta = scanner.next().charAt(0);
+            dano.DarDanoOuReceberDano(jogador,inimigo,scanner);
 
-                if (resposta == 's') {
-                    //atacando o inimigo
-                    System.out.println("Você atacou " + inimigo.getNome() + "!");
-                    inimigo.setVida(inimigo.getVida() - jogador.getDano());
-                    System.out.println(inimigo.getNome() + " perdeu " + jogador.getDano() + " de vida.");
-
-                    System.out.println("a vida do inimigo e: " + inimigo.getVida());
-
-                } else if (resposta == 'n') {
-                    //inimigo te atacando
-                    System.out.println("Você decidiu não atacar " + inimigo.getNome() + ".");
-                    jogador.setVida(jogador.getVida() - inimigo.getDano());
-
-                    System.out.println("a sua vida e: " + jogador.getVida());
-                } else {
-                    // caso clique em uma tecla errada
-                    System.out.println(" Escolha inválida. Por favor, tente novamente.");
-                    break;
-                }
-            }
             if (jogador.getVida() <= 0) {
 
                 System.out.println("Fim do jogo!");
@@ -124,32 +103,9 @@ public class Jogo {
 
                 imprime.imprimirPrimeiraFase02();
 
-                        // quando a vida do inimigo ou do jogador chegar a zero, saira do while
-                while (jogador.getVida() > 0 && inimigo2.getVida() > 0) {
-                    // Atacando o inimigo ou ser atacado
-                    System.out.println("Você deseja atacar " + inimigo2.getNome() + "? (s/n)");
-                    char resposta = scanner.next().charAt(0);
+                // quando a vida do inimigo ou do jogador chegar a zero, saira do while
+                dano.DarDanoOuReceberDano(jogador,inimigo2,scanner);
 
-                    if (resposta == 's') {
-                        //atacando o inimigo
-                        System.out.println("Você atacou " + inimigo2.getNome() + "!");
-                        inimigo2.setVida(inimigo2.getVida() - jogador.getDano());
-                        System.out.println(inimigo2.getNome() + " perdeu " + jogador.getDano() + " de vida.");
-
-                        System.out.println("a vida do inimigo e: " + inimigo2.getVida());
-
-                    } else if (resposta == 'n') {
-                        //inimigo te atacando
-                        System.out.println("Você decidiu não atacar " + inimigo2.getNome() + ".");
-                        jogador.setVida(jogador.getVida() - inimigo2.getDano());
-
-                        System.out.println("a sua vida e: " + jogador.getVida());
-                    } else {
-                        // caso clique em uma tecla errada
-                        System.out.println(" Escolha inválida. Por favor, tente novamente.");
-                        break;
-                    }
-                }
                 if (jogador.getVida() <= 0) {
 
                     System.out.println("Fim do jogo!");
@@ -162,11 +118,9 @@ public class Jogo {
 
             }
 
-
             System.out.println("Deseja jogar novamente? (s/n)");
         } while (scanner.next().charAt(0) == 's');
             scanner.close();
-
 
     }
 }
