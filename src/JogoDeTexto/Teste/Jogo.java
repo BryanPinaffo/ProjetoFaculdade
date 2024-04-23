@@ -20,7 +20,7 @@ public class Jogo {
 
         Imprimir imprime = new Imprimir();
 
-        imprime.imprimirTexto01();
+        imprime.imprimirInicio01();
 
 
         System.out.println(" digite seu nome: ");
@@ -36,38 +36,23 @@ public class Jogo {
         char sexo = scanner.next().charAt(0);
 
 
-        imprime.imprimeTexto03();
+        imprime.imprimirInicio02();
 
         // criando do while para opçao de jogar novamente
         do {
             // Criando uma pessoa
-            Pessoa jogador = new Pessoa(nome, idade, sexo);
+            Pessoa jogador = new Pessoa(nome, idade, sexo,10,5,2,100);
 
             // Criando um inimigo
-            Inimigo inimigo = new Inimigo("Inimigo");
+            Inimigo inimigo = new Inimigo("Inimigo",50,50,5,200);
 
             //criando inimigo medio
-            Inimigo inimigo2 = new Inimigo("Inimigo medio");
+            Inimigo inimigo2 = new Inimigo("Inimigo medio",100,200,60,200);
 
 
-            //tributos de cada personagem
-            jogador.setDano(20);
-            jogador.setVida(100);
-            jogador.setForca(15);
-            jogador.setInteligencia(2);
 
-            inimigo.setDano(30);
-            inimigo.setVida(100);
-            inimigo.setForca(15);
-            inimigo.setInteligencia(2);
+            imprime.imprimirInicio03();
 
-            inimigo2.setDano(60);
-            inimigo2.setVida(200);
-            inimigo2.setForca(30);
-            inimigo2.setInteligencia(4);
-
-            imprime.imprimirTexto02();
-            imprime.imprimirTexto04();
             System.out.println("arco: +5 dano \n"+ "espada: +7 dano \n"+ "adaga: + 10 dano \n" );
             System.out.println("qual sua escolhar? ");
             char arma = scanner.next().charAt(1);
@@ -88,13 +73,9 @@ public class Jogo {
 
             }
 
-            System.out.println("suas estastisticas sao:");
-            System.out.println("seu dano agora é " + jogador.getDano() );
-            System.out.println("sua força agora é " + jogador.getForca());
-            System.out.println("sua inteligencia é "+ jogador.getInteligencia());
-            System.out.println("sua vida continua "+ jogador.getVida());
+            imprime.imprimirEstastistica(jogador);
 
-
+            imprime.imprimirInicio04();
 
 
             // quando a vida do inimigo ou do jogador chegar a zero, saira do while
@@ -132,20 +113,16 @@ public class Jogo {
                 System.out.println("parabens "+ jogador.getNome()+" vc ganhou, vai para a fase 2\n");
                 // aqui podemos adicionar a logica para a segunda fase
 
-                imprime.imprimirFase02();
+                imprime.imprimirPrimeiraFase01();
 
                 // adicionando as estastiticas do inimigo ao jogador
                 jogador.setDano(jogador.getDano() + inimigo.getDano());
                 jogador.setForca(jogador.getForca() + inimigo.getForca());
                 jogador.setInteligencia(jogador.getInteligencia() + inimigo.getInteligencia());
 
-                System.out.println("suas estastisticas sao:");
-                System.out.println("seu dano agora é " + jogador.getDano() );
-                System.out.println("sua força agora é " + jogador.getForca());
-                System.out.println("sua inteligencia é "+ jogador.getInteligencia());
-                System.out.println("sua vida continua "+ jogador.getVida());
+                imprime.imprimirEstastistica(jogador);
 
-                imprime.imprimeFase02Texto();
+                imprime.imprimirPrimeiraFase02();
 
                         // quando a vida do inimigo ou do jogador chegar a zero, saira do while
                 while (jogador.getVida() > 0 && inimigo2.getVida() > 0) {
@@ -193,6 +170,3 @@ public class Jogo {
 
     }
 }
-
-
-
