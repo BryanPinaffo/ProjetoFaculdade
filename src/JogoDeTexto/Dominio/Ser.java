@@ -27,7 +27,6 @@ public class Ser {
     public char getSexo() {
         return sexo;
     }
-    // Método para atacar outro Ser
 
 
 }
