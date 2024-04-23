@@ -94,7 +94,7 @@ public class Teste {
 
             } else if (inimigo.getVida() <= 0) {
 
-                System.out.println("parabens "+ jogador.getNome()+" vc ganhou, vai para a fase 2\n\n");
+                System.out.println("parabens "+ jogador.getNome()+" vc ganhou, vai para a fase 2\n");
                 // aqui podemos adicionar a logica para a segunda fase
 
                 imprime.imprimirFase02();
