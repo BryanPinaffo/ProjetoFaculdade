@@ -113,6 +113,10 @@ public class Jogo {
 
                     System.out.println("parabens " + jogador.getNome() + " vc ganhou, vai para a fase 3\n");
                     // aqui podemos adicionar a logica para a segunda fase
+
+                    imprime.imprimirSomagemEstastisticas();
+                    somaEstastisticas.Soma(jogador,inimigo2);
+                    imprime.imprimirEstastistica(jogador);
                 }
 
             }
