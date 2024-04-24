@@ -1,6 +1,5 @@
 package JogoDeTexto.Dominio;
 
-import java.util.Scanner;
 
 public class SomaEstastisticas {
 
