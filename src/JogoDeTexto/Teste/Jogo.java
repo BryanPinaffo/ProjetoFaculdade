@@ -5,17 +5,9 @@ import JogoDeTexto.Dominio.*;
 import java.util.Scanner;
 
 public class Jogo {
-
-    private Scanner scanner;
-
-    public Jogo() {
-
-        scanner = new Scanner(System.in);
-
-    }
+    private Scanner scanner = new Scanner(System.in);
 
     public void iniciar() {
-
         // criando scanner para interaçao
 
         Imprimir imprime = new Imprimir();
@@ -63,7 +55,6 @@ public class Jogo {
                 jogador.setDano(jogador.getDano() + 10);
 
             }
-
             imprime.imprimirEstastistica(jogador);
 
             imprime.imprimirInicio04();
@@ -100,12 +91,9 @@ public class Jogo {
                     somaEstastisticas.Soma(jogador, inimigo2);
                     imprime.imprimirEstastistica(jogador);
                 }
-
             }
-
             System.out.println("Deseja jogar novamente? (s/n)");
         } while (scanner.next().charAt(0) == 's');
         scanner.close();
-
     }
 }
