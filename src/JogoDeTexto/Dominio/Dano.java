@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Dano {
 
-    public void DarDanoOuReceberDano(Pessoa jogador, Inimigo inimigo, Scanner scanner){
+    public void DarDanoOuReceberDano(Pessoa jogador, Inimigo inimigo, Scanner scanner) {
 
         while (jogador.getVida() > 0 && inimigo.getVida() > 0) {
             // Atacando o inimigo ou ser atacado
@@ -31,8 +31,6 @@ public class Dano {
                 break;
             }
         }
-
-
 
 
     }

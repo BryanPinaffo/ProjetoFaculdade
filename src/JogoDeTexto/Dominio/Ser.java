@@ -1,7 +1,6 @@
 package JogoDeTexto.Dominio;
 
 
-
 public class Ser {
     protected String nome;
     protected int idade;
@@ -15,7 +14,7 @@ public class Ser {
     // Construtor da classe Ser
 
 
-    public Ser(String nome,int dano, int vida, int inteligencia, int forca) {
+    public Ser(String nome, int dano, int vida, int inteligencia, int forca) {
         this.nome = nome;
         this.dano = dano;
         this.vida = vida;
