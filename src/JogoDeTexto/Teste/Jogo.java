@@ -23,7 +23,7 @@ public class Jogo {
         imprime.imprimirInicio01();
 
         // criado uma pessoa chamada jogador
-        Pessoa jogador = new Pessoa(" ", 0, ' ', 10, 5, 2, 100);
+        Pessoa jogador = new Pessoa(" ", 0, ' ', 0, 0, 0, 0);
 
         // metodo imprime onde conter perguntas sobre o jogador
         imprime.sobrePessoa(scanner, jogador);
