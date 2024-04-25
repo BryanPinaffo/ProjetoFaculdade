@@ -8,16 +8,16 @@ public class Jogo {
     private Scanner scanner = new Scanner(System.in);
 
     public void iniciar() {
-        // criando scanner para interaçao
 
         Imprimir imprime = new Imprimir();
+        Fase fase = new Fase();
 
         imprime.imprimirInicio01();
 
         // criado uma pessoa chamada jogador
         Pessoa jogador = new Pessoa(" ", 0, ' ', 0, 0, 0, 0);
 
-        // metodo imprime onde conter perguntas sobre o jogador
+        // Perguntas basicas
         Acao.sobrePessoa(scanner, jogador);
         imprime.imprimirInicio02();
 
@@ -38,8 +38,6 @@ public class Jogo {
 
             imprime.imprimirEstastistica(jogador);
 
-            Fase fase = new Fase();
-
             // inicia fase
             fase.faseUm(jogador,inimigo,scanner,imprime);
 
@@ -49,7 +47,7 @@ public class Jogo {
 
             } else if (inimigo.getVida() <= 0) { // verifica se o inimigo morreu
 
-                fase.RecompensaFaseUm(jogador,inimigo,imprime); // soma as estastisticas do inimigo com a sua
+                fase.recompensaFaseUm(jogador,inimigo,imprime); // soma as estastisticas do inimigo com a sua
 
                 // inicia fase
                 fase.faseDois(jogador,inimigo2,scanner,imprime);
@@ -60,7 +58,7 @@ public class Jogo {
 
                 } else if (inimigo.getVida() <= 0) { // verifica se o inimigo morreu
 
-                    fase.RecompensaFaseDois(jogador,inimigo2,imprime);
+                    fase.recompensaFaseDois(jogador,inimigo2,imprime);
 
                     //inicio da fase 3
                 }

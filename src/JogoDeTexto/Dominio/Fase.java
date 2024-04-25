@@ -15,11 +15,11 @@ public class Fase {
 
     }
 
-    public void RecompensaFaseUm(Pessoa jogador, Inimigo inimigo, Imprimir imprime){
+    public void recompensaFaseUm(Pessoa jogador, Inimigo inimigo, Imprimir imprime){
 
-        imprime.imprimirSomagemEstastisticas();
-        Acao.somaEstastisticas(jogador, inimigo);
-        imprime.imprimirEstastistica(jogador);
+        imprime.imprimirSomagemEstastisticas(); // fala que vc ganhou e que vai somar as estastisticas
+        Acao.somaEstastisticas(jogador, inimigo); // soma as estastisticas
+        imprime.imprimirEstastistica(jogador); // imprime as novas estastisticas do jogador
 
     }
 
@@ -34,7 +34,7 @@ public class Fase {
 
     }
 
-    public void RecompensaFaseDois(Pessoa jogador, Inimigo inimigo2, Imprimir imprime){
+    public void recompensaFaseDois(Pessoa jogador, Inimigo inimigo2, Imprimir imprime){
 
         imprime.imprimirSomagemEstastisticas();
         Acao.somaEstastisticas(jogador, inimigo2);
