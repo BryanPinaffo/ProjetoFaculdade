@@ -5,22 +5,6 @@ import java.util.Scanner;
 public class Imprimir {
 
 
-    public void sobrePessoa(Scanner scanner, Pessoa pessoa) {
-
-        System.out.println(" digite seu nome: ");
-        pessoa.setNome(scanner.nextLine());
-
-        System.out.println("digite sua idade: ");
-        pessoa.setIdade(scanner.nextInt());
-
-        // Consumir a nova linha pendente após nextInt()
-        scanner.nextLine();
-
-        System.out.println("digite seu sexo: ");
-        pessoa.setSexo(scanner.next().charAt(0));
-
-
-    }
 
 
     public void imprimirEstastistica(Pessoa pessoa) {
@@ -69,7 +53,7 @@ public class Imprimir {
 
     public void imprimirSomagemEstastisticas() {
 
-        System.out.println("parabens, todas as estasticias dele serao somadas a sua!!!");
+        System.out.println("parabens, vc ganhou, todas as estasticias dele serao somadas a sua!!!\n");
 
     }
 

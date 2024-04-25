@@ -18,7 +18,7 @@ public class Jogo {
         Pessoa jogador = new Pessoa(" ", 0, ' ', 0, 0, 0, 0);
 
         // metodo imprime onde conter perguntas sobre o jogador
-        imprime.sobrePessoa(scanner, jogador);
+        Acao.sobrePessoa(scanner, jogador);
         imprime.imprimirInicio02();
 
         // criando do while para opçao de jogar novamente
@@ -33,31 +33,15 @@ public class Jogo {
             Inimigo inimigo2 = new Inimigo("Inimigo medio", 100, 200, 60, 200);
 
 
-            imprime.imprimirInicio03();
+            // escolhe a primeira arma
+            Acao.escolherArma(imprime,jogador,scanner);
 
-            System.out.println("arco: +5 dano \n" + "espada: +7 dano \n" + "adaga: + 10 dano \n");
-            System.out.println("qual sua escolhar? ");
-            char arma = scanner.next().charAt(1);
-
-            if (arma == 'r') { // verifica se vc quer um arco
-
-                jogador.setDano(jogador.getDano() + 5); // adiciona a quantidade de dano da arma nas suas estastisticas
-
-            } else if (arma == 's') { // verifica se vc quer uma espada
-
-                jogador.setDano(jogador.getDano() + 7);
-
-            } else if (arma == 'd') {
-
-                jogador.setDano(jogador.getDano() + 10);
-
-            }
             imprime.imprimirEstastistica(jogador);
 
-            imprime.imprimirInicio04();
+            Fase fase = new Fase();
 
-            // criado forma de dano
-            Dano.DarDanoOuReceberDano(jogador, inimigo, scanner);
+            // inicia fase
+            fase.faseUm(jogador,inimigo,scanner,imprime);
 
             if (jogador.getVida() <= 0) {// verifica se vc morreu
 
@@ -65,15 +49,10 @@ public class Jogo {
 
             } else if (inimigo.getVida() <= 0) { // verifica se o inimigo morreu
 
-                System.out.println("parabens " + jogador + " vc ganhou, vai para a fase 2\n");
-                // aqui podemos adicionar a logica para a segunda fase
-                imprime.imprimirSomagemEstastisticas();
-                // adicionando as estastiticas do inimigo ao jogador
-                SomaEstastisticas.Soma(jogador, inimigo);
-                imprime.imprimirEstastistica(jogador);
-                imprime.imprimirPrimeiraFase02();
-                // criado forma de dano
-                Dano.DarDanoOuReceberDano(jogador, inimigo2, scanner);
+                fase.RecompensaFaseUm(jogador,inimigo,imprime); // soma as estastisticas do inimigo com a sua
+
+                // inicia fase
+                fase.faseDois(jogador,inimigo2,scanner,imprime);
 
                 if (jogador.getVida() <= 0) { // verifica se vc morreu
 
@@ -81,11 +60,9 @@ public class Jogo {
 
                 } else if (inimigo.getVida() <= 0) { // verifica se o inimigo morreu
 
-                    System.out.println("parabens " + jogador + " vc ganhou, vai para a fase 3\n");
+                    fase.RecompensaFaseDois(jogador,inimigo2,imprime);
 
-                    imprime.imprimirSomagemEstastisticas();
-                    SomaEstastisticas.Soma(jogador, inimigo2);
-                    imprime.imprimirEstastistica(jogador);
+                    //inicio da fase 3
                 }
             }
             System.out.println("Deseja jogar novamente? (s/n)");
