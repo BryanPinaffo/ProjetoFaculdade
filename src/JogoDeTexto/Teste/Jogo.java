@@ -32,9 +32,6 @@ public class Jogo {
             //criando inimigo medio
             Inimigo inimigo2 = new Inimigo("Inimigo medio", 100, 200, 60, 200);
 
-            // criado forma de dano
-            Dano dano = new Dano();
-            SomaEstastisticas somaEstastisticas = new SomaEstastisticas();
 
             imprime.imprimirInicio03();
 
@@ -59,8 +56,8 @@ public class Jogo {
 
             imprime.imprimirInicio04();
 
-            //Metodo para dar e receber dano
-            dano.DarDanoOuReceberDano(jogador, inimigo, scanner);
+            // criado forma de dano
+            Dano.DarDanoOuReceberDano(jogador, inimigo, scanner);
 
             if (jogador.getVida() <= 0) {// verifica se vc morreu
 
@@ -73,11 +70,11 @@ public class Jogo {
                 // aqui podemos adicionar a logica para a segunda fase
                 imprime.imprimirSomagemEstastisticas();
                 // adicionando as estastiticas do inimigo ao jogador
-                somaEstastisticas.Soma(jogador, inimigo);
+                SomaEstastisticas.Soma(jogador, inimigo);
                 imprime.imprimirEstastistica(jogador);
                 imprime.imprimirPrimeiraFase02();
-                //Metodo para dar e receber dano
-                dano.DarDanoOuReceberDano(jogador, inimigo2, scanner);
+                // criado forma de dano
+                Dano.DarDanoOuReceberDano(jogador, inimigo2, scanner);
 
                 if (jogador.getVida() <= 0) { // verifica se vc morreu
 
@@ -88,7 +85,7 @@ public class Jogo {
                     System.out.println("parabens " + jogador.getNome() + " vc ganhou, vai para a fase 3\n");
 
                     imprime.imprimirSomagemEstastisticas();
-                    somaEstastisticas.Soma(jogador, inimigo2);
+                    SomaEstastisticas.Soma(jogador, inimigo2);
                     imprime.imprimirEstastistica(jogador);
                 }
             }

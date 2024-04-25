@@ -3,8 +3,7 @@ package JogoDeTexto.Dominio;
 
 public class SomaEstastisticas {
 
-
-    public void Soma(Pessoa jogador, Inimigo inimigo) {
+    public static void Soma(Pessoa jogador, Inimigo inimigo) {
 
 
         // adicionando as estastiticas do inimigo ao jogador
