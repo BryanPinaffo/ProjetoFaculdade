@@ -65,8 +65,7 @@ public class Jogo {
 
             } else if (inimigo.getVida() <= 0) { // verifica se o inimigo morreu
 
-                System.out.println("parabens " + jogador.getNome() + " vc ganhou, vai para a fase 2\n");
-
+                System.out.println("parabens " + jogador + " vc ganhou, vai para a fase 2\n");
                 // aqui podemos adicionar a logica para a segunda fase
                 imprime.imprimirSomagemEstastisticas();
                 // adicionando as estastiticas do inimigo ao jogador
@@ -82,7 +81,7 @@ public class Jogo {
 
                 } else if (inimigo.getVida() <= 0) { // verifica se o inimigo morreu
 
-                    System.out.println("parabens " + jogador.getNome() + " vc ganhou, vai para a fase 3\n");
+                    System.out.println("parabens " + jogador + " vc ganhou, vai para a fase 3\n");
 
                     imprime.imprimirSomagemEstastisticas();
                     SomaEstastisticas.Soma(jogador, inimigo2);
