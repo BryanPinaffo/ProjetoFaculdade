@@ -1,10 +1,7 @@
 package JogoDeTexto.Dominio;
 
-import java.util.Scanner;
 
 public class Imprimir {
-
-
 
 
     public void imprimirEstastistica(Pessoa pessoa) {

@@ -2,10 +2,10 @@ package JogoDeTexto.Dominio;
 
 import java.util.Scanner;
 
-public class Acao {
+public abstract class Acao {
 
 
-    public static void escolherArma(Imprimir imprime, Pessoa jogador, Scanner scanner){
+    public static void escolherArma(Imprimir imprime, Pessoa jogador, Scanner scanner) {
 
         imprime.imprimirInicio03();
 
