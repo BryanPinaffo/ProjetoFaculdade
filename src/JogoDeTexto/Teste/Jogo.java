@@ -67,9 +67,14 @@ public class Jogo {
             } while (scanner.next().charAt(0) == 's');
             scanner.close();
 
-        } catch (Exception e) {
+        } catch (StringIndexOutOfBoundsException e) {
 
-            System.out.println(" Digitado opçao errada ou de forma errada");
+            System.out.println(" vc digitou a opçao errada. ");
+            scanner.close();
+
+        }catch (java.util.InputMismatchException e){
+
+            System.out.println(" Digitado de forma errada");
             scanner.close();
 
         }
