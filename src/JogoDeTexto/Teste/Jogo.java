@@ -72,7 +72,7 @@ public class Jogo {
             System.out.println(" vc digitou a opçao errada. ");
             scanner.close();
 
-        }catch (java.util.InputMismatchException e){
+        } catch (java.util.InputMismatchException e) {
 
             System.out.println(" Digitado de forma errada");
             scanner.close();
