@@ -3,20 +3,30 @@ import javax.swing.JOptionPane;
 
 public class Text 
 {
-    public String text;
-
-    public void print()
+    public String select(String title, String msg, String[]option)
     {
-        JOptionPane.showInputDialog();
+        String print = "";
+        Object textSelect = JOptionPane.showInputDialog(null, msg, title, JOptionPane.INFORMATION_MESSAGE, null, option, option[0]);
+        print = textSelect.toString();
+        
+        return print;
     }
 
-    public void atributs(Player player) 
+    public String randomSelect(String[]listText) 
     {
-        JOptionPane.showMessageDialog(null,"" + player.getName);
-        JOptionPane.showMessageDialog(null,"" + player.getAttack);
-        JOptionPane.showMessageDialog(null,"" + player.getAge);
-        JOptionPane.showMessageDialog(null,"" + player.getHp);
-    }
+		int tamanho = listText.length;
+		int posicao = this.InteiroAleatorio(0, tamanho-1);
+
+		return listText[posicao];
+	}
+
+    public int randomInt(int minimo, int maximo) 
+    {
+		int aleatorio = (int)(1000000000 * Math.random());
+		int numero = aleatorio%(maximo-minimo+1) + minimo;
+
+		return numero;
+	}
 
 /* 
     public void imprimirInicio01() 

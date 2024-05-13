@@ -4,19 +4,20 @@ public class Player
 {
     protected String name;
     protected int age;
+
     protected int attack;
-    protected int hp;
+    protected int hp = 100;
 
     // Construtor da classe Pessoa
 
-    public Player(String name, int attack, int hp) 
+    public player(String name, int attack, int hp) 
     {
         this.name = name;
         this.attack = attack;
         this.hp = hp;
     }
 
-    public Player(String name, int age, int attack, int hp) 
+    public player(String name, int age, int attack, int hp) 
     {
         this.name = name;
         this.age = age;
@@ -24,7 +25,7 @@ public class Player
         this.hp = hp;
     }
 
-    public Inimigo(String name, int attack, int hp)
+    public Enemy(String name, int attack, int hp)
     {
         super(name, attack, hp);
     }
