@@ -11,19 +11,19 @@ public class GameMenu
         switch (choice) 
         {
             case "Novo Jogo":
-                
+                newGame();
             break;
 
             case "Jogar":
-                
+                continueGame();
             break;
 
             case "Salvar":
-                
+                saveGame();
             break;
 
             case "Sair":
-                
+                exitGame();
             break;
 
             default:
