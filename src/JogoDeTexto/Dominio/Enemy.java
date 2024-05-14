@@ -1,22 +1,9 @@
 package JogoDeTexto.Dominio;
 
-public class Enemy extends Player
+public class Enemy extends Player 
 {
-    private String weapon;
-
-    public Enemy(String name, int attack, int hp, String weapon) 
+    public Enemy(String name, int attack, int hp) 
     {
-        super(name, attack, hp);
-        this.weapon = weapon;
-    }
-
-    public String getWeapon()
-    {
-        return this.weapon;
-    }
-
-    public void setWeapon(String weapon) 
-    {
-        this.weapon = weapon;
+        super(name, null, attack, hp, 0, null); // Passa null para idade, xp e arma
     }
 }

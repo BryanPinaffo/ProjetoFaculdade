@@ -2,35 +2,26 @@ package JogoDeTexto.Dominio;
 
 public class Player 
 {
-    protected String name;
-    protected int age;
-
-    protected int attack;
-    protected int hp = 100;
-    protected int xp = 0;
-
-    // Construtor da classe Pessoa
-
-    public Player(String name, int attack, int hp) 
-    {
-        this.name = name;
-        this.attack = attack;
-        this.hp = hp;
-    }
+    private String name;
+    private String age;
+    private int attack;
+    private String weapon;
+    private int hp;
+    private int xp;
 
     public Player() 
+    {
+        // Construtor padrão
+    }
+
+    public Player(String name, String age, int attack, int hp, int xp, String weapon) 
     {
         this.name = name;
         this.age = age;
         this.attack = attack;
         this.hp = hp;
         this.xp = xp;
-    }
-
-    @Override
-    public String toString() 
-    {
-        return name;
+        this.weapon = weapon;
     }
 
     public String getName() 
@@ -43,12 +34,12 @@ public class Player
         this.name = name;
     }
 
-    public int getAge() 
+    public String getAge() 
     {
         return age;
     }
 
-    public void setAge(int age) 
+    public void setAge(String age) 
     {
         this.age = age;
     }
@@ -61,6 +52,16 @@ public class Player
     public void setAttack(int attack) 
     {
         this.attack = attack;
+    }
+
+    public String getWeapon() 
+    {
+        return weapon;
+    }
+
+    public void setWeapon(String weapon) 
+    {
+        this.weapon = weapon;
     }
 
     public int getHp() 
@@ -83,5 +84,3 @@ public class Player
         this.xp = xp;
     }
 }
-
-
