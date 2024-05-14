@@ -1,3 +1,5 @@
+/*
+
 package JogoDeTexto.Teste;
 
 import JogoDeTexto.Dominio.*;
@@ -80,3 +82,5 @@ public class Jogo {
         }
     }
 }
+
+*/
