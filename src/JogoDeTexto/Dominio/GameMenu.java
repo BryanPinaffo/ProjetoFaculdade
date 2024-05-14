@@ -1,4 +1,5 @@
 package JogoDeTexto.Dominio;
+import java.sql.Savepoint;
 import javax.swing.JOptionPane;
 
 public class GameMenu 
@@ -68,8 +69,35 @@ public class GameMenu
         Level level = new Level(new Text());
     }
 
-    private void saveGame(Player player)
+    private void saveGame(Save save, Player player)
     {
-        
+        save.setPlayer(player);
+        save.setLevelProgress(1);
+    }
+}
+
+public class Save
+{
+    private Player savedPlayer;
+    private int levelProgress;
+
+    public Player getPlayer()
+    {
+        return savedPlayer;
+    }
+
+    public void setPlayer(Player player)
+    {
+        savedPlayer = player;
+    }
+
+    public int getLevelProgress()
+    {
+        return levelProgress;
+    }
+
+    public void setLevelProgress(int progress)
+    {
+        levelProgress = progress;
     }
 }
