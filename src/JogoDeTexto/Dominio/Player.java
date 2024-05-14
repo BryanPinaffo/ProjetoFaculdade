@@ -7,27 +7,24 @@ public class Player
 
     protected int attack;
     protected int hp = 100;
+    protected int xp = 0;
 
     // Construtor da classe Pessoa
 
-    public player(String name, int attack, int hp) 
+    public Player(String name, int attack, int hp) 
     {
         this.name = name;
         this.attack = attack;
         this.hp = hp;
     }
 
-    public player(String name, int age, int attack, int hp) 
+    public Player() 
     {
         this.name = name;
         this.age = age;
         this.attack = attack;
         this.hp = hp;
-    }
-
-    public Enemy(String name, int attack, int hp)
-    {
-        super(name, attack, hp);
+        this.xp = xp;
     }
 
     @Override
@@ -74,6 +71,16 @@ public class Player
     public void setHp(int hp) 
     {
         this.hp = hp;
+    }
+
+    public int getXp() 
+    {
+        return xp;
+    }
+
+    public void setXp(int xp) 
+    {
+        this.xp = xp;
     }
 }
 

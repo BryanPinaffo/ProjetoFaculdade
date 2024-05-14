@@ -15,7 +15,7 @@ public class Text
     public String randomSelect(String[]listText) 
     {
 		int tamanho = listText.length;
-		int posicao = this.InteiroAleatorio(0, tamanho-1);
+		int posicao = this.randomInt(0, tamanho-1);
 
 		return listText[posicao];
 	}
