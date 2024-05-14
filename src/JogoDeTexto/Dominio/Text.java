@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 
 public class Text 
 {
-    public String select(String title, String msg, String[] options) 
+    public static String select(String title, String msg, String[] options) 
     {
         Object selectedOption = JOptionPane.showInputDialog(null, msg, title, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
 

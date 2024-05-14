@@ -12,11 +12,9 @@ public class Main {
         {
 
         /*
-            Player player = null; // Inicialmente não há jogo salvo
-
             while (true) 
             {
-                // Exibir menu inicial
+                Player player = null;
                 GameMenu.showMenu(player);
             }
         */
