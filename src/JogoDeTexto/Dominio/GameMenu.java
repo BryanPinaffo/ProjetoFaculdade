@@ -19,7 +19,7 @@ public class GameMenu
             break;
 
             case "Salvar":
-                saveGame();
+                saveGame(player);
             break;
 
             case "Sair":
@@ -47,9 +47,10 @@ public class GameMenu
         Level level = new Level(new Text());
     }
 
-    private static void saveGame()
+    private static void saveGame(Player player)
     {
-
+        SavePoint.setPlayer(player);
+        Savepoint.setLevelProgress(1);
     }
 
     private static void exitGame()
