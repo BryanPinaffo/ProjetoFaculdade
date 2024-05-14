@@ -6,22 +6,39 @@ public class BattleSimulator
     private Player player;
     private Enemy enemy;
     private Text textUtil;
+    private int roundCount;
+    private boolean canUseSpecialAttack;
 
     public BattleSimulator(Player player, Enemy enemy) 
     {
         this.player = player;
         this.enemy = enemy;
         this.textUtil = new Text();
+        this.roundCount = 0;
+        this.canUseSpecialAttack = true;
     }
 
     public void startBattle() 
     {
         JOptionPane.showMessageDialog(null, "Início da Batalha!\nVocê está enfrentando: " + enemy.getName(), "Batalha", JOptionPane.INFORMATION_MESSAGE);
 
-        while (player.getHp() > 0 && enemy.getHp() > 0) 
+        while (player.isAlive() && enemy.isAlive()) 
         {
+            roundCount++; //Contagem de rounds
+
             // Mostra opções de ataque
             String[] attackOptions = {"Ataque Normal", "Ataque Especial", "Curar"};
+
+            if (canUseSpecialAttack) 
+            {
+                attackOptions = new String[]{"Ataque Normal", "Ataque Especial", "Curar"};
+            } 
+            
+            else 
+            {
+                attackOptions = new String[]{"Ataque Normal", "Curar"};
+            }
+            
             String selectedAttack = textUtil.select("Escolha seu ataque", "Escolha uma ação:", attackOptions);
 
             // Realiza a ação escolhida pelo jogador
@@ -29,20 +46,32 @@ public class BattleSimulator
             {
                 case "Ataque Normal":
                     performNormalAttack();
-                    break;
+                break;
+
                 case "Ataque Especial":
+                if (canUseSpecialAttack) 
+                {
                     performSpecialAttack();
-                    break;
+                    canUseSpecialAttack = false; // Desabilita o ataque especial até a próxima restrição
+                } 
+                
+                else 
+                {
+                    JOptionPane.showMessageDialog(null, "Você não pode usar o Ataque Especial nesta rodada.", "Ação Inválida", JOptionPane.WARNING_MESSAGE);
+                }
+                break;
+
                 case "Cura":
                     healing();
-                    break;
+                break;
+
                 default:
                     JOptionPane.showMessageDialog(null, "Ação inválida. Tente novamente.", "Erro", JOptionPane.ERROR_MESSAGE);
-                    break;
+                break;
             }
 
             // Verifica se o inimigo está derrotado
-            if (enemy.getHp() <= 0) 
+            if (!enemy.isAlive()) 
             {
                 JOptionPane.showMessageDialog(null, "Você derrotou o inimigo!", "Vitória", JOptionPane.INFORMATION_MESSAGE);
                 break;
@@ -52,7 +81,7 @@ public class BattleSimulator
             simulateEnemyAttack();
 
             // Verifica se o jogador foi derrotado
-            if (player.getHp() <= 0) 
+            if (!player.isAlive()) 
             {
                 JOptionPane.showMessageDialog(null, "Você foi derrotado pelo inimigo!", "Derrota", JOptionPane.ERROR_MESSAGE);
                 break;
@@ -70,7 +99,7 @@ public class BattleSimulator
     private void performSpecialAttack() 
     {
         // Implemente um ataque especial com efeitos adicionais
-        int damage = player.getAttack() * 2; // Exemplo: ataque especial causa o dobro de dano
+        int damage = player.getAttack() * 3; // Exemplo: ataque especial causa o triplo de dano
         enemy.takeDamage(damage);
         JOptionPane.showMessageDialog(null, "Você realizou um ataque especial!\nCausou " + damage + " de dano.", "Ataque Especial", JOptionPane.INFORMATION_MESSAGE);
     }
