@@ -1,5 +1,4 @@
 package JogoDeTexto.Dominio;
-import java.sql.Savepoint;
 import javax.swing.JOptionPane;
 
 public class GameMenu 
@@ -33,7 +32,7 @@ public class GameMenu
 
                 if (player != null)
                 {
-                    saveGame(save, player);
+                    saveGame(player);
                     JOptionPane.showMessageDialog(null, "Jogo salvo com sucesso!", "Salvar Jogo", JOptionPane.INFORMATION_MESSAGE);
                 }
                 
@@ -71,6 +70,6 @@ public class GameMenu
 
     private void saveGame(Player player)
     {
-        return player;
+        
     }
 }
