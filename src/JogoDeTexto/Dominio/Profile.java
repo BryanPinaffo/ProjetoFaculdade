@@ -48,6 +48,6 @@ public class Profile
     public static void main(String[] args) 
     {
         Profile profile = new Profile();
-        profile.createPlayerProfile();
+        profile.createPlayer();
     }
 }
