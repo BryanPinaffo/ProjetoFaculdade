@@ -35,12 +35,16 @@ public class GameMenu
 
     private static void newGame()
     {
+        Profile profile = new Profile();
+        Player player = new Player();
+        Level level = new Level(new Text());
 
+        level.level01(player);
     }
 
     private static void continueGame()
     {
-
+        Level level = new Level(new Text());
     }
 
     private static void saveGame()
