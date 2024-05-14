@@ -12,7 +12,7 @@ public class Profile
         this.textUtil = new Text();
     }
 
-    public void createPlayer() 
+    public Player createPlayer() 
     {
         String playerName = JOptionPane.showInputDialog("Digite seu nome:");
         player.setName(playerName);
@@ -37,6 +37,8 @@ public class Profile
         // Exemplo de batalha
         BattleSimulator battleSimulator = new BattleSimulator(player, enemy);
         battleSimulator.startBattle();
+
+        return player;
     }
 
     private void displayPlayerInfo() 
