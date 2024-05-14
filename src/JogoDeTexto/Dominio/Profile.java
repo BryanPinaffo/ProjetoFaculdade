@@ -12,7 +12,7 @@ public class Profile
         this.textUtil = new Text();
     }
 
-    public void createPlayerProfile() 
+    public void createPlayer() 
     {
         String playerName = JOptionPane.showInputDialog("Digite seu nome:");
         player.setName(playerName);
