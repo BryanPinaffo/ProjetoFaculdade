@@ -1,31 +1,25 @@
 package JogoDeTexto.Dominio;
+import javax.swing.JOptionPane;
 
-public abstract class Level 
+public class Level 
 {
-    public int currentLevel = 0;
+    private Text textUtil;
 
-    public static void level01(Player player) 
+    public void level01(Player player) 
     {
+        Profile profile = new Profile();
         
-    }
+        // Exibir informações do jogador
+        String playerInfo = textUtil.playerProfile(player);
+        JOptionPane.showMessageDialog(null, playerInfo, "Ficha do Jogador", JOptionPane.INFORMATION_MESSAGE);
 
-    public static void level02(Player player) 
-    {
-        
-    }
+        // Criar um inimigo para a fase 01
+        Enemy enemy = new Enemy("Esqueleto", 8, 50);
+        String enemyInfo = textUtil.enemyEncounter(enemy);
+        JOptionPane.showMessageDialog(null, enemyInfo, "Inimigo Encontrado!", JOptionPane.WARNING_MESSAGE);
 
-    public static void level03(Player player) 
-    {
-        
-    }
-
-    public static void level04(Player player) 
-    {
-        
-    }
-
-    public static void level05(Player player) 
-    {
-        
+        // Iniciar batalha
+        BattleSimulator battleSimulator = new BattleSimulator(player, enemy);
+        battleSimulator.startBattle();
     }
 }
