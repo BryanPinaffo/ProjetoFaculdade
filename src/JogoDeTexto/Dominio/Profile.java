@@ -28,28 +28,6 @@ public class Profile
         String selectedWeapon = textUtil.select("Escolha de Arma", "Escolha uma arma:", weaponOptions);
         player.setWeapon(selectedWeapon);
 
-        displayPlayerInfo();
-
-        Enemy enemy = new Enemy("Esqueleto", 8, 50); // Exemplo de criação de um inimigo
-        String enemyInfo = textUtil.enemyEncounter(enemy);
-        JOptionPane.showMessageDialog(null, enemyInfo, "Inimigo Encontrado!", JOptionPane.WARNING_MESSAGE);
-
-        // Exemplo de batalha
-        BattleSimulator battleSimulator = new BattleSimulator(player, enemy);
-        battleSimulator.startBattle();
-
         return player;
-    }
-
-    private void displayPlayerInfo() 
-    {
-        String playerInfo = textUtil.playerProfile(player);
-        JOptionPane.showMessageDialog(null, playerInfo, "Ficha do jogador", JOptionPane.INFORMATION_MESSAGE);        
-    }
-
-    public static void main(String[] args) 
-    {
-        Profile profile = new Profile();
-        profile.createPlayer();
     }
 }

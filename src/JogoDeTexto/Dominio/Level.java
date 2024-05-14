@@ -5,9 +5,13 @@ public class Level
 {
     private Text textUtil;
 
+    public Level(Text textUtil) 
+    {
+        this.textUtil = textUtil;
+    }
+
     public void level01(Player player) 
     {
-        Profile profile = new Profile();
         
         // Exibir informações do jogador
         String playerInfo = textUtil.playerProfile(player);
@@ -19,7 +23,7 @@ public class Level
         JOptionPane.showMessageDialog(null, enemyInfo, "Inimigo Encontrado!", JOptionPane.WARNING_MESSAGE);
 
         // Iniciar batalha
-        BattleSimulator battleSimulator = new BattleSimulator(player, enemy);
+        BattleSimulator battleSimulator = new BattleSimulator(player, enemy, textUtil);
         battleSimulator.startBattle();
     }
 }

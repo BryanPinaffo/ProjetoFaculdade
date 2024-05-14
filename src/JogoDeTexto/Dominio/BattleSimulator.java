@@ -9,7 +9,7 @@ public class BattleSimulator
     private int roundCount;
     private boolean canUseSpecialAttack;
 
-    public BattleSimulator(Player player, Enemy enemy) 
+    public BattleSimulator(Player player, Enemy enemy, Text textUtil) 
     {
         this.player = player;
         this.enemy = enemy;
@@ -61,7 +61,7 @@ public class BattleSimulator
                 }
                 break;
 
-                case "Cura":
+                case "Curar":
                     healing();
                 break;
 
