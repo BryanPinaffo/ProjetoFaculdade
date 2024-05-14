@@ -70,7 +70,7 @@ public class GameMenu
 
     private static void saveGame(Player player)
     {
-        SavePoint.setPlayer(player);
+        SavePoint.setPlayer(player); 
         SavePoint.setLevelProgress(1);
     }
 }

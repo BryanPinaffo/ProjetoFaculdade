@@ -10,6 +10,17 @@ public class Main {
     {
         try 
         {
+
+        /*
+            Player player = null; // Inicialmente não há jogo salvo
+
+            while (true) 
+            {
+                // Exibir menu inicial
+                GameMenu.showMenu(player);
+            }
+        */
+
             Profile profile = new Profile();
             Player player = profile.createPlayer(); // Criar jogador
         
