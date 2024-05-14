@@ -24,6 +24,16 @@ public class Player
         this.weapon = weapon;
     }
 
+    public void takeDamage(int damage) 
+    {
+        this.hp -= damage;
+    }
+
+    public boolean isAlive() 
+    {
+        return this.hp > 0;
+    }
+
     public String getName() 
     {
         return name;
