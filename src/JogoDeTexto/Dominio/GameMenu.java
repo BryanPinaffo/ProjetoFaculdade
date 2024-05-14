@@ -15,15 +15,36 @@ public class GameMenu
             break;
 
             case "Jogar":
-                continueGame();
+
+                if (player != null)
+                {
+                    continueGame();
+                }
+                
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Não há jogo salvo encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    showMenu(player);
+                }
             break;
 
             case "Salvar":
-                saveGame(player);
+
+                if (player != null)
+                {
+                    saveGame(player);
+                    JOptionPane.showMessageDialog(null, "Jogo salvo com sucesso!", "Salvar Jogo", JOptionPane.INFORMATION_MESSAGE);
+                }
+                
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Não há jogo em andamento para salvar.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    showMenu(player);
+                }
             break;
 
             case "Sair":
-                exitGame();
+                JOptionPane.showMessageDialog(null, "Obrigado por jogar!", "Sair", JOptionPane.INFORMATION_MESSAGE);
             break;
 
             default:
@@ -50,11 +71,6 @@ public class GameMenu
     private static void saveGame(Player player)
     {
         SavePoint.setPlayer(player);
-        Savepoint.setLevelProgress(1);
-    }
-
-    private static void exitGame()
-    {
-
+        SavePoint.setLevelProgress(1);
     }
 }
