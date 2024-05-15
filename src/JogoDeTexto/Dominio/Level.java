@@ -18,7 +18,7 @@ public class Level
         JOptionPane.showMessageDialog(null, playerInfo, "Ficha do Jogador", JOptionPane.INFORMATION_MESSAGE);
 
         // Criar um inimigo para a fase 01
-        Enemy enemy = new Enemy("Esqueleto", 8, 50);
+        Enemy enemy = new Enemy("Esqueleto", 3, 7);
         String enemyInfo = textUtil.enemyEncounter(enemy);
         JOptionPane.showMessageDialog(null, enemyInfo, "Inimigo Encontrado!", JOptionPane.WARNING_MESSAGE);
 
