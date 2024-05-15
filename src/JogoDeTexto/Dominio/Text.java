@@ -3,6 +3,7 @@ import javax.swing.JOptionPane;
 
 public class Text 
 {
+    // Método para exibir uma seleção com opções
     public static String select(String title, String msg, String[] options) 
     {
         Object selectedOption = JOptionPane.showInputDialog(null, msg, title, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
@@ -16,6 +17,18 @@ public class Text
         {
             return ""; // Caso o usuário cancele a seleção
         }
+    }
+
+    // Método para exibir uma mensagem
+    public static void showMessage(String message) 
+    {
+        JOptionPane.showMessageDialog(null, message);
+    }
+
+    // Método para pedir uma entrada de texto do usuário
+    public static String promptInput(String message) 
+    {
+        return JOptionPane.showInputDialog(message);
     }
 
     public String playerProfile(Player player) 
