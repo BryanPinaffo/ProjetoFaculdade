@@ -42,7 +42,7 @@ public class GameMenu
 
     private static void newGame()
     {
-        Profile profile = new Profile();
+            Profile profile = new Profile();
             Player player = profile.createPlayer(); // Criar jogador
         
             Text text = new Text();
