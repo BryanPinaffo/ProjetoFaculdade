@@ -1,8 +1,5 @@
 package JogoDeTexto.Teste;
-import JogoDeTexto.Dominio.Level;
-import JogoDeTexto.Dominio.Player;
-import JogoDeTexto.Dominio.Profile;
-import JogoDeTexto.Dominio.Text;
+import JogoDeTexto.Dominio.*;
 import javax.swing.JOptionPane;
 
 public class Main {
@@ -10,29 +7,11 @@ public class Main {
     {
         try 
         {
-
-        /*
             while (true) 
             {
                 Player player = null;
                 GameMenu.showMenu(player);
-            }
-        */
-
-            Profile profile = new Profile();
-            Player player = profile.createPlayer(); // Criar jogador
-        
-            Text text = new Text();
-            Level level = new Level(text);
-
-            // Executar níveis do jogo
-            level.level01(player);
-            // level.level02(player);
-            // level.level03(player);
-            // level.level04(player);
-            // level.level05(player);
-
-            JOptionPane.showMessageDialog(null, "Jogo concluído!");
+            }  
         } 
         
         catch (Exception e) 
