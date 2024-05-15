@@ -18,7 +18,6 @@ public class GameMenu
                 if (player != null)
                 {
                     continueGame();
-                    newGame();
                 }
                 
                 else

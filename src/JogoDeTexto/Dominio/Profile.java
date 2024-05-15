@@ -11,7 +11,10 @@ public class Profile
 
     public Player createPlayer() 
     {
-        Text.showMessage("Bem-vindo(a) à EcoMetrópole, uma grande cidade medieval onde a vida floresce entre torres e vielas, mas as sombras da poluição e da destruição ambiental ameaçam seu equilíbrio. Antes de iniciar sua jornada pela sustentabilidade, permita-me conhecê-lo(a) melhor.");
+        String introMessage = "Bem-vindo(a) à EcoMetrópole, uma grande cidade medieval onde a vida floresce entre torres e vielas, " +
+                              "mas as sombras da poluição e da destruição ambiental ameaçam seu equilíbrio. " +
+                              "Antes de iniciar sua jornada pela sustentabilidade, permita-me conhecê-lo(a) melhor.";
+        Text.showMessage(introMessage);
 
         String playerName = Text.showInput("Qual é o seu nome?");
         player.setName(playerName);
@@ -48,6 +51,10 @@ public class Profile
             break;
         }
         player.setWeapon(selectedWeapon);
+
+        String weaponMessage = "Uau, você escolheu " + selectedWeapon + ", é uma sábia escolha!";
+        Text.showMessage(weaponMessage);
+        Text.showMessage("Vamos lá, é hora de iniciar sua jornada!");
 
         return player;
     }
