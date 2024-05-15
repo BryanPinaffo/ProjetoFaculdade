@@ -31,6 +31,7 @@ public class Text
         return JOptionPane.showInputDialog(message);
     }
 
+    // Método para exibir o perfil do jogador
     public String playerProfile(Player player) 
     {
         StringBuilder sb = new StringBuilder();
@@ -44,6 +45,7 @@ public class Text
         return sb.toString();
     }
 
+    // Método para exibir detalhes do encontro com o inimigo
     public String enemyEncounter(Enemy enemy) 
     {
         StringBuilder sb = new StringBuilder();
@@ -54,6 +56,7 @@ public class Text
         return sb.toString();
     }
 
+    // Método para gerar um número aleatório
     public int randomInt(int min, int max) 
     {
         return (int) (Math.random() * (max - min + 1)) + min;
