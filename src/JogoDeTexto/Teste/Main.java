@@ -1,6 +1,5 @@
 package JogoDeTexto.Teste;
 import JogoDeTexto.Dominio.*;
-import javax.swing.JOptionPane;
 
 public class Main {
     public static void main(String[] args) 
@@ -14,7 +13,7 @@ public class Main {
             catch (Exception e) 
             {
                 e.printStackTrace(); // Imprime detalhes do erro no console
-                JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+                Text.showMessage("Erro: " + e.getMessage());
             } 
     }
 }

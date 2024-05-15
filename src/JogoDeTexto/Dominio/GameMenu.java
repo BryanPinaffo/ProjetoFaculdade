@@ -1,5 +1,4 @@
 package JogoDeTexto.Dominio;
-import javax.swing.JOptionPane;
 
 public class GameMenu 
 {
@@ -24,17 +23,17 @@ public class GameMenu
                 
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "Não há jogo salvo encontrado.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    Text.showMessage("Não há jogo salvo encontrado.");
                     showMenu(player);
                 }
             break;
 
             case "Sair":
-                JOptionPane.showMessageDialog(null, "Obrigado por jogar!", "Sair", JOptionPane.INFORMATION_MESSAGE);
+                Text.showMessage("brigado por jogar!");
             break;
 
             default:
-                JOptionPane.showMessageDialog(null, "Opção inválida. Tente novamente.", "Erro", JOptionPane.ERROR_MESSAGE);
+                Text.showMessage("Opção inválida. Tente novamente.");
                 showMenu(player);
             break;
         }
@@ -45,8 +44,7 @@ public class GameMenu
             Profile profile = new Profile();
             Player player = profile.createPlayer(); // Criar jogador
         
-            Text text = new Text();
-            Level level = new Level(text);
+            Level level = new Level();
 
             // Executar níveis do jogo
             level.level01(player);
@@ -55,11 +53,11 @@ public class GameMenu
             // level.level04(player);
             // level.level05(player);
 
-            JOptionPane.showMessageDialog(null, "Jogo concluído!");
+            Text.showMessage("Jogo concluído");
     }
     
     private static void continueGame()
     {
-        Level level = new Level(new Text());
+        Level level = new Level();
     }
 }

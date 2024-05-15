@@ -26,7 +26,7 @@ public class Text
     }
 
     // Método para pedir uma entrada de texto do usuário
-    public static String promptInput(String message) 
+    public static String showInput(String message) 
     {
         return JOptionPane.showInputDialog(message);
     }

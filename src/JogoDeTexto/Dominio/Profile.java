@@ -1,23 +1,22 @@
 package JogoDeTexto.Dominio;
-import javax.swing.JOptionPane;
 
 public class Profile 
 {
     private Player player;
-    private Text textUtil;
 
     public Profile() 
     {
         this.player = new Player();
-        this.textUtil = new Text();
     }
 
     public Player createPlayer() 
     {
-        String playerName = JOptionPane.showInputDialog("Qual é o seu nome?");
+        Text.showMessage("Bem-vindo(a) à EcoMetrópole, uma grande cidade medieval onde a vida floresce entre torres e vielas, mas as sombras da poluição e da destruição ambiental ameaçam seu equilíbrio. Antes de iniciar sua jornada pela sustentabilidade, permita-me conhecê-lo(a) melhor.");
+
+        String playerName = Text.showInput("Qual é o seu nome?");
         player.setName(playerName);
 
-        String playerAge = JOptionPane.showInputDialog("Qual a sua idade?");
+        String playerAge = Text.showInput("Qual a sua idade?");
         player.setAge(playerAge);
 
         player.setAttack(2);
@@ -25,7 +24,7 @@ public class Profile
         player.setXp(0);
 
         String[] weaponOptions = {"Espada", "Arco", "Adaga"};
-        String selectedWeapon = textUtil.select("Escolha de Arma", "Escolha uma arma:", weaponOptions);
+        String selectedWeapon = Text.select("Escolha de Arma", "Escolha uma arma:", weaponOptions);
 
         switch (selectedWeapon) 
         {
@@ -45,7 +44,7 @@ public class Profile
             break;
 
             default:
-            JOptionPane.showMessageDialog(null, "Ação inválida. Escolha uma arma.", "Erro", JOptionPane.ERROR_MESSAGE);
+                Text.showMessage("Ação inválida. Escolha uma arma.");
             break;
         }
         player.setWeapon(selectedWeapon);
