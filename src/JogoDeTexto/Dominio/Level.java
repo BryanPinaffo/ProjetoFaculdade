@@ -57,10 +57,11 @@ public class Level
                         "Todas as suas criaturas mutantes, que dependiam de seu poder, sentem suas forças se esvaindo, morrendo logo em seguida.\n" +
                         "Parabéns, você venceu o Boss 01 e agora os trabalhadores locais poderão voltar a viver suas vidas sem serem aterrorizados pela crueldade do Executivo Corporativo e de seus servos.");
                 
+                Text.showMessage("Recompensas do Nível 1: ");
                 int xpEarned = 10;
                 player.setXp(player.getXp() + xpEarned);
 
-                Text.showMessage("Você ganhou " + xpEarned +"pontos de experiência");
+                Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
                 player.distributeXpPoints(xpEarned);
 
                 // Exibe o perfil atualizado do jogador
@@ -116,14 +117,15 @@ public class Level
                 Text.showMessage("Após uma batalha árdua, você derrota a Engenheira Louca e liberta as Ruínas Subterrâneas da opressão da tecnologia poluidora.\n" +
                         "Sua jornada pela sustentabilidade continua...");
 
-                Text.showMessage("Recompensas do Nível 2: " + "\n\n+25 de Vida\n+7 de Força");
-                player.setHp(player.getHp() + 25);
-                player.setAttack(player.getAttack() + 7);
+                Text.showMessage("Recompensas do Nível 2: ");
+                int xpEarned = 10;
+                player.setXp(player.getXp() + xpEarned);
 
-                Text.showMessage("Experiência: 10");
-                player.setXp(player.getXp() + 5);
+                Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
+                player.distributeXpPoints(xpEarned);
 
-                Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+                // Exibe o perfil atualizado do jogador
+                Text.showMessage(textUtil.playerProfile(player));
             } 
             
             else 
@@ -167,14 +169,15 @@ public class Level
                         "À medida que a luz do sol penetra pelas copas das árvores, você sente a Floresta Ancestral vibrar de gratidão, suas árvores cantando em harmonia enquanto a vida floresce mais uma vez sob sua proteção.\n" +
                         "Você triunfou sobre a destruição ecológica neste capítulo de sua jornada...");
 
-                Text.showMessage("Recompensas do Nível 3: " + "\n\n+30 de Vida\n+8 de Força");
-                player.setHp(player.getHp() + 30);
-                player.setAttack(player.getAttack() + 8);
+                Text.showMessage("Recompensas do Nível 3: ");
+                int xpEarned = 10;
+                player.setXp(player.getXp() + xpEarned);
 
-                Text.showMessage("Experiência: 15");
-                player.setXp(player.getXp() + 5);
+                Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
+                player.distributeXpPoints(xpEarned);
 
-                Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+                // Exibe o perfil atualizado do jogador
+                Text.showMessage(textUtil.playerProfile(player));
             } 
             
             else 
@@ -222,14 +225,15 @@ public class Level
                         "A luz do sol rompe finalmente as nuvens, iluminando os céus enegrecidos da EcoMetrópole com sua radiância dourada, " +
                         "trazendo esperança e renovação para todas as criaturas ameaçadas pela sua crueldade.");
                 
-                Text.showMessage("Recompensas do Nível 4: " + "\n\n+40 de Vida\n+10 de Força");
-                player.setHp(player.getHp() + 40);
-                player.setAttack(player.getAttack() + 10);
+                Text.showMessage("Recompensas do Nível 4: ");
+                int xpEarned = 10;
+                player.setXp(player.getXp() + xpEarned);
 
-                Text.showMessage("Experiência: 20");
-                player.setXp(player.getXp() + 5);
+                Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
+                player.distributeXpPoints(xpEarned);
 
-                Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+                // Exibe o perfil atualizado do jogador
+                Text.showMessage(textUtil.playerProfile(player));
             } 
             
             else 
@@ -291,14 +295,15 @@ public class Level
                         "Parabéns, " + player.getName() + ", você salvou a EcoMetrópole da destruição ecológica e trouxe luz " +
                         "e renovação para todos os seus habitantes.\n[fim de jogo]");
 
-                Text.showMessage("Recompensas do Nível Final: " + "\n\n+50 de Vida\n+15 de Força");
-                player.setHp(player.getHp() + 50);
-                player.setAttack(player.getAttack() + 15);
+                Text.showMessage("Recompensas Finais: ");
+                int xpEarned = 10;
+                player.setXp(player.getXp() + xpEarned);
 
-                Text.showMessage("Experiência: 25");
-                player.setXp(player.getXp() + 5);
+                Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
+                player.distributeXpPoints(xpEarned);
 
-                Text.showMessage("Score final do Jogador: \n" + textUtil.playerProfile(player)); //exibe ficha do jogador
+                // Exibe o perfil atualizado do jogador
+                Text.showMessage("Score final do Jogador: \n" + textUtil.playerProfile(player));
             } 
             
             else 
