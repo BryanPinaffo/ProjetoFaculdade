@@ -63,6 +63,12 @@ public class GameMenu
                Text.showMessage("Obrigado por jogar!");
                System.exit(0);
            break;
+
+           default:
+                // Tratamento de escolha inválida
+                Text.showMessage("Opção inválida. Tente novamente.");
+                showMenu(player);
+            break;
        }
     }
 

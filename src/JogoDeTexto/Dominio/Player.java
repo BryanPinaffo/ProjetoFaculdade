@@ -8,6 +8,7 @@ public class Player
     private String weapon;
     private int hp;
     private int xp;
+    private int xpEarned;
 
     // Construtor padrão
     public Player() 

@@ -76,6 +76,18 @@ public class BattleSimulator
         }
     }
 
+    public void rewardBattle(int xpEarned)
+    {
+        Text.showMessage("Recompensas do Nível: ");
+        player.setXp(player.getXp() + xpEarned);
+
+        Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
+        player.distributeXpPoints(xpEarned);
+
+        // Exibe o perfil atualizado do jogador
+        Text.showMessage(textUtil.playerProfile(player));
+    }
+
     // Método para realizar um ataque normal
     private void performNormalAttack() 
     {
