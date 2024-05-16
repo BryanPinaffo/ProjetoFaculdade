@@ -28,7 +28,7 @@ public class GameMenu
             break;
 
             case "Sair":
-                Text.showMessage("brigado por jogar!");
+                Text.showMessage("Obrigado por jogar!");
             break;
 
             default:
@@ -58,5 +58,6 @@ public class GameMenu
     private static void continueGame()
     {
         Level level = new Level();
+        newGame();
     }
 }
