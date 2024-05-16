@@ -47,7 +47,7 @@ public class GameMenu
 
             // Executar níveis do jogo
             level.level01(player);
-            // level.level02(player);
+            level.level02(player);
             // level.level03(player);
             // level.level04(player);
             // level.level05(player);

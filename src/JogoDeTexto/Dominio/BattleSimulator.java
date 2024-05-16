@@ -91,7 +91,7 @@ public class BattleSimulator
 
     private void healing() 
     {
-        player.setHp(player.getHp() + 3); // Exemplo: cura restaura 3 pontos de vida
+        player.setHp(player.getHp() + 5); // Exemplo: cura restaura 3 pontos de vida
         Text.showMessage("Você se curou!\nRecuperou 3 pontos de vida.");
     }
 
