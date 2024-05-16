@@ -6,6 +6,7 @@ public class BattleSimulator
     private Enemy enemy;
     private int roundCount;
     private boolean canUseSpecialAttack;
+    private Text textUtil;
 
     // Construtor inicializa os atributos do simulador de batalha
     public BattleSimulator(Player player, Enemy enemy) 
@@ -14,6 +15,7 @@ public class BattleSimulator
         this.enemy = enemy;
         this.roundCount = 0;
         this.canUseSpecialAttack = true;
+        this.textUtil = new Text();
     }
 
     // Método que inicia a batalha
@@ -89,7 +91,7 @@ public class BattleSimulator
     // Método para realizar um ataque especial
     private void performSpecialAttack() 
     {
-        int damage = player.getAttack() * 3; // Exemplo: ataque especial causa o triplo de dano
+        int damage = player.getAttack() * textUtil.randomInt(1, 3); // Exemplo: ataque especial causa o triplo de dano
         enemy.takeDamage(damage);
         Text.showMessage("Você realizou um ataque especial!\nCausou " + damage + " de dano.");
     }
@@ -97,7 +99,7 @@ public class BattleSimulator
     // Método para curar o jogador
     private void healing() 
     {
-        player.setHp(player.getHp() + 5); // Recupera pontos de vida
+        player.setHp(player.getHp() + textUtil.randomInt(5, 30)); // Recupera pontos de vida
         Text.showMessage("Você se curou!\nRecuperou 5 pontos de vida.");
     }
 

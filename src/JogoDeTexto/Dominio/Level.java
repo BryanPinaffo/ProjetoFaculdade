@@ -105,7 +105,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Engenheira Louca", textUtil.randomInt(6, 9), 30);
+            Enemy boss = new Enemy("Engenheira Louca", textUtil.randomInt(6, 10), 30);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -156,7 +156,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Lenhadora Desonesta", textUtil.randomInt(10, 12), 45);
+            Enemy boss = new Enemy("Lenhadora Desonesta", textUtil.randomInt(11, 15), 45);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -212,7 +212,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Barão da Poluição", textUtil.randomInt(13, 15), 70);
+            Enemy boss = new Enemy("Barão da Poluição", textUtil.randomInt(16, 20), 70);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -272,7 +272,7 @@ public class Level
         
         else
         {
-            Enemy finalBoss = new Enemy("Rainha das Trevas", textUtil.randomInt(16, 20), 100);
+            Enemy finalBoss = new Enemy("Rainha das Trevas", textUtil.randomInt(20, 30), 100);
             String enemyInfo = textUtil.enemyEncounter(finalBoss);
             Text.showMessage(enemyInfo);
 
