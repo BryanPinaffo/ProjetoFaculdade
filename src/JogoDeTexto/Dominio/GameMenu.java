@@ -44,6 +44,28 @@ public class GameMenu
         }
     }
 
+    public static void defeatMenu(Player player)
+    {
+       // Opções do menu
+       String[] options = {"Jogar de novo","Sair"};
+       String choice = Text.select("Menu", "Você perdeu!!", options); 
+
+       // Switch-case para tratar as escolhas do jogador no menu
+       switch (choice) 
+       {
+           case "Jogar de novo":
+               // Inicia um novo jogo
+               newGame();
+           break;
+
+           case "Sair":
+               // Sai do jogo
+               Text.showMessage("Obrigado por jogar!");
+               System.exit(0);
+           break;
+       }
+    }
+
     // Método para iniciar um novo jogo
     private static void newGame()
     {

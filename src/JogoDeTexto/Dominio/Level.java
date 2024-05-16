@@ -73,7 +73,7 @@ public class Level
             {
                 // Mensagem de morte caso o jogador escolha a opção errada
                 Text.showMessage("Você foi enganado pelas falácias do Executivo Corporativo para que ganhasse tempo. Seus servos, as criaturas mutantes, lhe cercam e o atacam com diversos golpes. > Você morreu.");
-                System.exit(0);
+                GameMenu.defeatMenu(player);
             }
         }
 
@@ -81,7 +81,7 @@ public class Level
         {
             // Mensagem de morte caso o jogador esteja morto
             Text.showMessage("Você corre para dentro de uma fábrica antiga e abandonada, para fugir do combate, mas é cercado por diversas criaturas mutantes e é atacado. > Você morreu.");
-            System.exit(0);
+            GameMenu.defeatMenu(player);
         }
     } 
 
@@ -100,7 +100,7 @@ public class Level
         if (choice.equals("Desistir de enfrentá-la")) 
         {
             Text.showMessage("No caminho de volta para a comunidade dos refugiados, se depara com criaturas sombrias que o atacam até a sua morte. > Você morreu.");
-            System.exit(0);
+            GameMenu.defeatMenu(player);
         } 
         
         else 
@@ -131,7 +131,7 @@ public class Level
             else 
             {
                 Text.showMessage("Você foi derrotado pela Engenheira Louca. Os refugiados lamentam sua perda e continuam a lutar pela sobrevivência nas profundezas.");
-                System.exit(0);
+                GameMenu.defeatMenu(player);
             }
         }
     }
@@ -151,7 +151,7 @@ public class Level
         if (choice.equals("Desistir do embate")) 
         {
             Text.showMessage("Ao tentar fugir do embate, a Lenhadora Desonesta ouve seus passos e te ataca com seu enorme e poderoso machado. > Você morreu.");
-            System.exit(0);
+            GameMenu.defeatMenu(player);
         } 
         
         else 
@@ -183,7 +183,7 @@ public class Level
             else 
             {
                 Text.showMessage("Você foi derrotado pela Lenhadora Desonesta. A destruição continua na Floresta Ancestral.");
-                System.exit(0);
+                GameMenu.defeatMenu(player);
             }
         }
     }
@@ -207,7 +207,7 @@ public class Level
         if (choice.equals("Abandonar o desafio e ir embora")) 
         {
             Text.showMessage("O líder dos pássaros se decepciona com sua atitude covarde e o joga das alturas como forma de vingança em nome de todos os pássaros. > Você morreu.");
-            System.exit(0);
+            GameMenu.defeatMenu(player);
         } 
         
         else 
@@ -239,7 +239,7 @@ public class Level
             else 
             {
                 Text.showMessage("Você foi derrotado pelo Barão da Poluição. Os céus continuam enegrecidos pela poluição.");
-                System.exit(0);
+                GameMenu.defeatMenu(player);
             }
         }
     }
@@ -267,7 +267,7 @@ public class Level
             Text.showMessage("Seus companheiros não podem vencer o mal sem a sua ajuda. Ao abandoná-los, eles lutaram corajosamente contra o inimigo, " +
                     "mas não foram páreos para a Rainha das Trevas. A destruição ambiental tomou conta de todo o reino, contaminando todos os seres vivos. " +
                     "A mãe natureza morreu, assim como você.");
-            System.exit(0);
+            GameMenu.defeatMenu(player);
         } 
         
         else
@@ -309,7 +309,7 @@ public class Level
             else 
             {
                 Text.showMessage("Você foi derrotado pela Rainha das Trevas. A EcoMetrópole permanece nas trevas.");
-                System.exit(0);
+                GameMenu.defeatMenu(player);
             }
         }
     }
