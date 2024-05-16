@@ -226,24 +226,73 @@ public class Level
         }
     }
 
-    /*
-
     public void levelFinal(Player player) 
     {
+        Text.showMessage("Nível 5: O Santuário da Vida\n" +
+                "Após uma batalha árdua com o Barão da Poluição, você é conduzido pelo líder das aves ao Santuário da Vida, " +
+                "um oásis verdejante no coração da EcoMetrópole. Aqui, a natureza floresce em toda a sua glória, " +
+                "alimentada pela energia da esperança e da renovação.\n" +
+                "No Santuário da Vida, você se reúne com os Guardiões da Terra, os Guardiões da Floresta, os Refugiados das Profundezas " +
+                "e os Pássaros da Resistência, unindo forças para enfrentar a Rainha das Trevas, a encarnação da destruição ambiental " +
+                "que acabara de iniciar sua devastação.\n" +
+                "Unindo os conhecimentos ancestrais sobre a terra e as energias dos Guardiões da Terra, a sabedoria e poderes mágicos " +
+                "dos Guardiões da Floresta, as estratégias de defesa e resistência dos Refugiados das Profundezas e as táticas de combate " +
+                "aéreo dos Pássaros da Resistência, vocês se sentem prontos para a batalha final.\n" +
+                "Antes de prosseguir, a pergunta ecoa em sua mente: você está pronto para enfrentar os desafios que aguardam no Santuário da Vida " +
+                "e levar a EcoMetrópole de volta à luz da esperança?");
+
+        String[] options = {"Não, abandonar a batalha", "Sim, enfrentar o meu inimigo"};
+        String choice = Text.select("Decisão", "O que você decide fazer?", options);
+
+        if (choice.equals("Não, abandonar a batalha")) 
+        {
+            Text.showMessage("Seus companheiros não podem vencer o mal sem a sua ajuda. Ao abandoná-los, eles lutaram corajosamente contra o inimigo, " +
+                    "mas não foram páreos para a Rainha das Trevas. A destruição ambiental tomou conta de todo o reino, contaminando todos os seres vivos. " +
+                    "A mãe natureza morreu, assim como você.");
+            System.exit(0);
+        } 
         
-        // Exibir informações do jogador
-        String playerInfo = textUtil.playerProfile(player);
-        JOptionPane.showMessageDialog(null, playerInfo, "Ficha do Jogador", JOptionPane.INFORMATION_MESSAGE);
+        else
+        {
+            Enemy finalBoss = new Enemy("Rainha das Trevas", 15, 50);
+            String enemyInfo = textUtil.enemyEncounter(finalBoss);
+            Text.showMessage(enemyInfo);
 
-        // Criar um inimigo para a fase 01
-        Enemy enemy = new Enemy("Esqueleto", 8, 50);
-        String enemyInfo = textUtil.enemyEncounter(enemy);
-        JOptionPane.showMessageDialog(null, enemyInfo, "Inimigo Encontrado!", JOptionPane.WARNING_MESSAGE);
+            BattleSimulator battleSimulator = new BattleSimulator(player, finalBoss);
+            battleSimulator.startBattle();
 
-        // Iniciar batalha
-        BattleSimulator battleSimulator = new BattleSimulator(player, enemy, textUtil);
-        battleSimulator.startBattle();
+            if (player.isAlive()) 
+            {
+                Text.showMessage("Com coragem inabalável, você lança seu último ataque contra a escuridão, " +
+                        "canalizando todas as suas habilidades e poderes de seus aliados para superar as defesas da Rainha das Trevas. " +
+                        "E, finalmente, com um golpe decisivo, a Rainha das Trevas é derrotada, dissipando-se em uma nuvem de sombras.\n" +
+                        "Com a derrota da Rainha das Trevas, a EcoMetrópole floresce mais uma vez. " +
+                        "Os rios correm límpidos, refletindo os raios do sol que brilham sobre as florestas exuberantes. " +
+                        "Os céus, antes enegrecidos pela poluição, agora são tão azuis quanto em tempos antigos, " +
+                        "e os pássaros voam livremente entre as nuvens brancas e fofas.\n" +
+                        "Seu heroísmo e dedicação à causa ambiental são celebrados em toda a cidade. " +
+                        "Você se torna um símbolo de esperança e inspiração para todos os que lutaram ao seu lado. " +
+                        "As pessoas se unem em gratidão, prometendo proteger e preservar a EcoMetrópole para as gerações futuras, " +
+                        "honrando o legado daqueles que dedicaram suas vidas à causa da sustentabilidade e da vida em harmonia com a natureza.\n" +
+                        "Parabéns, " + player.getName() + ", você salvou a EcoMetrópole da destruição ecológica e trouxe luz " +
+                        "e renovação para todos os seus habitantes.\n[fim de jogo]");
+
+                Text.showMessage("Recompensas do Nível Final: " + "\n\n+50 de Vida\n+15 de Força");
+                player.setHp(player.getHp() + 50);
+                player.setAttack(player.getAttack() + 15);
+
+                Text.showMessage("Experiência: 25");
+                player.setXp(player.getXp() + 5);
+
+                Text.showMessage("Score final do Jogador: ");
+                Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+            } 
+            
+            else 
+            {
+                Text.showMessage("Você foi derrotado pela Rainha das Trevas. A EcoMetrópole permanece nas trevas.");
+                System.exit(0);
+            }
+        }
     }
-
-    */
 }
