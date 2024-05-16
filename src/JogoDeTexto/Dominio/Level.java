@@ -284,8 +284,7 @@ public class Level
                 Text.showMessage("Experiência: 25");
                 player.setXp(player.getXp() + 5);
 
-                Text.showMessage("Score final do Jogador: ");
-                Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+                Text.showMessage("Score final do Jogador: \n" + textUtil.playerProfile(player)); //exibe ficha do jogador
             } 
             
             else 
