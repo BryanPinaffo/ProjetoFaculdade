@@ -120,24 +120,58 @@ public class Level
         }
     }
 
-    /* 
-
     public void level03(Player player) 
     {
+       Text.showMessage("Nível 3: A Floresta Ancestral\n" +
+                "Na Floresta Ancestral, a atmosfera muda drasticamente. Aqui, a natureza é tanto sua aliada quanto sua inimiga. " +
+                "Você enfrenta animais selvagens, criaturas mágicas e armadilhas naturais enquanto navega pelas densas florestas e pântanos sombrios.\n" +
+                "Ao longo do caminho, você encontra os Guardiões da Floresta, ancestrais sábios que protegem a terra há gerações. " +
+                "Eles compartilham suas preocupações sobre o desmatamento desenfreado e a caça predatória que ameaçam a existência da floresta. " +
+                "Uma chama se incendeia em seu peito, e você sabe o que deve ser feito!");
+
+        String[] options = {"Desistir do embate", "Atacar a Lenhadora Desonesta"};
+        String choice = Text.select("Decisão", "O que você decide fazer?", options);
+
+        if (choice.equals("Desistir do embate")) 
+        {
+            Text.showMessage("Ao tentar fugir do embate, a Lenhadora Desonesta ouve seus passos e te ataca com seu enorme e poderoso machado. > Você morreu.");
+            System.exit(0);
+        } 
         
-        // Exibir informações do jogador
-        String playerInfo = textUtil.playerProfile(player);
-        JOptionPane.showMessageDialog(null, playerInfo, "Ficha do Jogador", JOptionPane.INFORMATION_MESSAGE);
+        else 
+        {
+            Enemy boss = new Enemy("Lenhadora Desonesta", 8, 30);
+            String enemyInfo = textUtil.enemyEncounter(boss);
+            Text.showMessage(enemyInfo);
 
-        // Criar um inimigo para a fase 01
-        Enemy enemy = new Enemy("Esqueleto", 8, 50);
-        String enemyInfo = textUtil.enemyEncounter(enemy);
-        JOptionPane.showMessageDialog(null, enemyInfo, "Inimigo Encontrado!", JOptionPane.WARNING_MESSAGE);
+            BattleSimulator battleSimulator = new BattleSimulator(player, boss);
+            battleSimulator.startBattle();
 
-        // Iniciar batalha
-        BattleSimulator battleSimulator = new BattleSimulator(player, enemy, textUtil);
-        battleSimulator.startBattle();
+            if (player.isAlive()) 
+            {
+                Text.showMessage("Com um golpe final certeiro, você derrota a Lenhadora Desonesta, deixando-a incapaz de continuar sua destruição. " +
+                        "À medida que a luz do sol penetra pelas copas das árvores, você sente a Floresta Ancestral vibrar de gratidão, suas árvores cantando em harmonia enquanto a vida floresce mais uma vez sob sua proteção.\n" +
+                        "Você triunfou sobre a destruição ecológica neste capítulo de sua jornada...");
+
+                Text.showMessage("Recompensas do Nível 3: " + "\n\n+30 de Vida\n+8 de Força");
+                player.setHp(player.getHp() + 30);
+                player.setAttack(player.getAttack() + 8);
+
+                Text.showMessage("Experiência: 15");
+                player.setXp(player.getXp() + 5);
+
+                Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+            } 
+            
+            else 
+            {
+                Text.showMessage("Você foi derrotado pela Lenhadora Desonesta. A destruição continua na Floresta Ancestral.");
+                System.exit(0);
+            }
+        }
     }
+
+    /*
 
     public void level04(Player player) 
     {
