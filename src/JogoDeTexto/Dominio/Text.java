@@ -32,6 +32,12 @@ public class Text
         return JOptionPane.showInputDialog(message);
     }
 
+    // Método para solicitar uma entrada de número do usuário
+    public static int inputNumber(int message) 
+    {
+        return Integer.parseInt(JOptionPane.showInputDialog(message));
+    }
+
     // Método para exibir o perfil do jogador
     public String playerProfile(Player player) 
     {

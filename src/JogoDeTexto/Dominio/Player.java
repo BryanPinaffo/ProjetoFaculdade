@@ -37,6 +37,57 @@ public class Player
         return this.hp > 0;
     }
 
+    public void distributeXpPoints(int xpPoints) 
+    {
+        while (xpPoints > 0) 
+        {
+            Text.showMessage("Você tem " + xpPoints + " pontos de experiência para distribuir.");
+            String[] options = {"Aumentar Vida", "Aumentar Força"};
+            String choice = Text.select("Distribuição de Pontos", "Como você quer distribuir seus pontos?", options);
+
+            switch (choice) 
+            {
+                case "Aumentar HP":
+                    Text.showMessage("Quantos pontos você quer adicionar ao HP?");
+                    int hpPoints = Text.inputNumber("Insira a quantidade de pontos de vida");
+
+                    if (hpPoints <= xpPoints) 
+                    {
+                        this.hp += hpPoints;
+                        xpPoints -= hpPoints;
+                        Text.showMessage(hpPoints + " pontos de vida adicionados.");
+                    } 
+                    
+                    else 
+                    {
+                        Text.showMessage("Você não tem mais pontos de experiência suficientes.");
+                    }
+                break;
+                
+                case "Aumentar Ataque":
+                    Text.showMessage("Quantos pontos você quer adicionar ao Força?");
+                    int attackPoints = Text.inputNumber("Insira a quantidade de pontos de força");
+                    
+                    if (attackPoints <= xpPoints) 
+                    {
+                        this.attack += attackPoints;
+                        xpPoints -= attackPoints;
+                        Text.showMessage(attackPoints + " pontos de força adicionados.");
+                    } 
+                    
+                    else 
+                    {
+                        Text.showMessage("Você não tem pontos de experiência suficientes.");
+                    }
+                break;
+                
+                default:
+                    Text.showMessage("Opção inválida. Tente novamente.");
+                break;
+            }
+        }
+    }
+
      // Métodos getter e setter para os atributos do jogador
     public String getName() 
     {
