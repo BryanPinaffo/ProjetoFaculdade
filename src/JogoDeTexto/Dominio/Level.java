@@ -57,12 +57,11 @@ public class Level
                         "Todas as suas criaturas mutantes, que dependiam de seu poder, sentem suas forças se esvaindo, morrendo logo em seguida.\n" +
                         "Parabéns, você venceu o Boss 01 e agora os trabalhadores locais poderão voltar a viver suas vidas sem serem aterrorizados pela crueldade do Executivo Corporativo e de seus servos.");
                 
-                Text.showMessage("Recompensas do Nível 1: " + "\n\n+20 de Vida\n+5 de Força");
-                player.setHp(player.getHp() + 20);
-                player.setAttack(player.getAttack() + 5);
+                int xpEarned = 10;
+                player.setXp(player.getXp() + xpEarned);
 
-                Text.showMessage("Experiência: 5");
-                player.setXp(player.getXp() + 5);
+                Text.showMessage("Você ganhou " + xpEarned +"pontos de experiência");
+                player.distributeXpPoints(xpEarned);
 
                 // Exibe o perfil atualizado do jogador
                 Text.showMessage(textUtil.playerProfile(player));
