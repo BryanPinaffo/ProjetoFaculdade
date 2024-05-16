@@ -88,7 +88,7 @@ public class Player
         }
     }
 
-     // Métodos getter e setter para os atributos do jogador
+    // Métodos getter e setter para os atributos do jogador
     public String getName() 
     {
         return name;

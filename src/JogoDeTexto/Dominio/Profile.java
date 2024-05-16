@@ -39,16 +39,16 @@ public class Profile
         {
             case "Espada":
                 player.setAttack(player.getAttack() + 5);
-                player.setHp(player.getHp() + 2);
+                player.setHp(player.getHp() + 3);
             break;
 
             case "Arco":
-                player.setAttack(player.getAttack() + 2);
+                player.setAttack(player.getAttack() + 3);
                 player.setHp(player.getHp() + 5);
             break;
 
             case "Adaga":
-                player.setAttack(player.getAttack() + 3);
+                player.setAttack(player.getAttack() + 4);
                 player.setHp(player.getHp() + 4);
             break;
 
