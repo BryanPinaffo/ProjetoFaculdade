@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 public class Text 
 {
     // Método para exibir uma seleção com opções
+    // Método para exibir uma seleção com opções e retornar a opção selecionada pelo usuário
     public static String select(String title, String msg, String[] options) 
     {
         Object selectedOption = JOptionPane.showInputDialog(null, msg, title, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
@@ -15,17 +16,17 @@ public class Text
         
         else 
         {
-            return ""; // Caso o usuário cancele a seleção
+            return ""; // Retorna uma string vazia se o usuário cancelar a seleção
         }
     }
 
-    // Método para exibir uma mensagem
+    // Método para exibir uma mensagem simples
     public static void showMessage(String message) 
     {
         JOptionPane.showMessageDialog(null, message);
     }
 
-    // Método para pedir uma entrada de texto do usuário
+    // Método para solicitar uma entrada de texto do usuário
     public static String showInput(String message) 
     {
         return JOptionPane.showInputDialog(message);
@@ -56,7 +57,7 @@ public class Text
         return sb.toString();
     }
 
-    // Método para gerar um número aleatório
+    // Método para gerar um número aleatório dentro de um intervalo
     public int randomInt(int min, int max) 
     {
         return (int) (Math.random() * (max - min + 1)) + min;

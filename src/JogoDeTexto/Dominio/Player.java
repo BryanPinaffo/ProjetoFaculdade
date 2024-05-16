@@ -9,11 +9,12 @@ public class Player
     private int hp;
     private int xp;
 
+    // Construtor padrão
     public Player() 
     {
-        // Construtor padrão
     }
 
+    // Construtor com parâmetros
     public Player(String name, String age, int attack, int hp, int xp, String weapon) 
     {
         this.name = name;
@@ -24,16 +25,19 @@ public class Player
         this.weapon = weapon;
     }
 
+    // Método para aplicar dano ao jogador
     public void takeDamage(int damage) 
     {
         this.hp -= damage;
     }
 
+    // Método para verificar se o jogador está vivo
     public boolean isAlive() 
     {
         return this.hp > 0;
     }
 
+     // Métodos getter e setter para os atributos do jogador
     public String getName() 
     {
         return name;

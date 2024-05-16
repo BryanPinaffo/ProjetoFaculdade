@@ -1,18 +1,23 @@
 package JogoDeTexto.Dominio;
 
+// Classe Level define níveis do jogo e suas respectivas lógicas
 public class Level 
 {
     private Text textUtil;
 
+    // Construtor inicializa um objeto Text
     public Level() 
     {
         this.textUtil = new Text();
     }
 
+    // Método que implementa o primeiro nível do jogo
     public void level01(Player player) 
     {
-        Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+        // Mostra o perfil do jogador
+        Text.showMessage(textUtil.playerProfile(player));
 
+        // Exibe a narrativa do nível 1
         Text.showMessage("Nível 1: O Distrito Poluído\n" +
         "O Distrito Poluído é um labirinto de fábricas decadentes e rios enegrecidos. Criaturas mutantes vagam pelas ruas, alimentadas pelos resíduos tóxicos despejados pelas indústrias. " +
         "Seu primeiro desafio é enfrentar essas abominações, usando suas habilidades e sua arma para abrir caminho pela sujeira e pela corrupção.\n" +
@@ -21,26 +26,33 @@ public class Level
         "Suas palavras inflamam sua determinação, alimentando sua vontade de derrotar o Executivo Corporativo, o líder ganancioso das indústrias, " +
         "cujos lucros vêm à custa do meio ambiente e da saúde da população.");
 
-        
+        // Opções de ação para o jogador
         String[] options = {"Atacar o Executivo Corporativo", "Se esconder"};
         String choice = Text.select("Escolha sua ação", "O que você deseja fazer?", options);
 
+        // Condicional verifica a escolha do jogador
         if (choice.equals("Atacar o Executivo Corporativo")) 
         {
+            // Cria o inimigo e exibe informações sobre ele
             Enemy boss = new Enemy("Executivo Corporativo", 5, 30);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
+            // Inicia a batalha entre o jogador e o inimigo
             BattleSimulator battleSimulator = new BattleSimulator(player, boss);
             battleSimulator.startBattle();
         }
 
+        // Verifica se o jogador está vivo após a batalha
         if (player.isAlive()) 
         {
+            // Opções finais de decisão para o jogador
             String finalChoice = Text.select("Decisão final", "O Executivo Corporativo oferece riqueza e poder em troca de sua lealdade. O que você faz?", new String[]{"Sucumbir à ganância", "Atacar o inimigo"});
             
+            // Condicional baseada na escolha final do jogador
             if (finalChoice.equals("Atacar o inimigo")) 
             {
+                // Mensagens de vitória e recompensas para o jogador
                 Text.showMessage("Você não se deixa ser seduzido pelas riquezas oferecidas pelo Executivo Corporativo, golpeando-o com sua arma assim que seu inimigo demonstrou ter abaixado a guarda. " +
                         "Todas as suas criaturas mutantes, que dependiam de seu poder, sentem suas forças se esvaindo, morrendo logo em seguida.\n" +
                         "Parabéns, você venceu o Boss 01 e agora os trabalhadores locais poderão voltar a viver suas vidas sem serem aterrorizados pela crueldade do Executivo Corporativo e de seus servos.");
@@ -52,12 +64,14 @@ public class Level
                 Text.showMessage("Experiência: 5");
                 player.setXp(player.getXp() + 5);
 
-                Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+                // Exibe o perfil atualizado do jogador
+                Text.showMessage(textUtil.playerProfile(player));
             } 
             
             else 
             
             {
+                // Mensagem de morte caso o jogador escolha a opção errada
                 Text.showMessage("Você foi enganado pelas falácias do Executivo Corporativo para que ganhasse tempo. Seus servos, as criaturas mutantes, lhe cercam e o atacam com diversos golpes. > Você morreu.");
                 System.exit(0);
             }
@@ -65,6 +79,7 @@ public class Level
 
         else 
         {
+            // Mensagem de morte caso o jogador esteja morto
             Text.showMessage("Você corre para dentro de uma fábrica antiga e abandonada, para fugir do combate, mas é cercado por diversas criaturas mutantes e é atacado. > Você morreu.");
             System.exit(0);
         }

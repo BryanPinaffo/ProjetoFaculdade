@@ -6,13 +6,17 @@ public class Main {
     {
             try 
             {
+                // Inicializa o jogador como nulo
                 Player player = null;
+
+                // Exibe o menu do jogo
                 GameMenu.showMenu(player); 
             } 
             
             catch (Exception e) 
             {
-                e.printStackTrace(); // Imprime detalhes do erro no console
+                // Tratamento de exceções com exibição de mensagens de erro
+                e.printStackTrace();
                 Text.showMessage("Erro: " + e.getMessage());
             } 
     }
