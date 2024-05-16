@@ -33,9 +33,28 @@ public class Text
     }
 
     // Método para solicitar uma entrada de número do usuário
-    public static int inputNumber(int message) 
+    public static int inputNumber(String message) 
     {
-        return Integer.parseInt(JOptionPane.showInputDialog(message));
+        int number = -1;
+        boolean validInput = false;
+
+        while (!validInput) 
+        {
+            String input = JOptionPane.showInputDialog(message);
+            
+            try
+            {
+                number = Integer.parseInt(input);
+                validInput = true;
+            }
+
+            catch (NumberFormatException e)
+            {
+                JOptionPane.showMessageDialog(null, "Entrada inválida. Por favor, insira um número inteiro.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        return number;
     }
 
     // Método para exibir o perfil do jogador

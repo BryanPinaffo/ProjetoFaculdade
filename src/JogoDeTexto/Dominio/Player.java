@@ -47,11 +47,11 @@ public class Player
 
             switch (choice) 
             {
-                case "Aumentar HP":
-                    Text.showMessage("Quantos pontos você quer adicionar ao HP?");
+                case "Aumentar Vida":
+                    Text.showMessage("Quantos pontos de vida você quer adicionar?");
                     int hpPoints = Text.inputNumber("Insira a quantidade de pontos de vida");
 
-                    if (hpPoints <= xpPoints) 
+                    if (hpPoints <= xpPoints && hpPoints > 0)
                     {
                         this.hp += hpPoints;
                         xpPoints -= hpPoints;
@@ -64,11 +64,11 @@ public class Player
                     }
                 break;
                 
-                case "Aumentar Ataque":
-                    Text.showMessage("Quantos pontos você quer adicionar ao Força?");
+                case "Aumentar Força":
+                    Text.showMessage("Quantos pontos de força você quer adicionar?");
                     int attackPoints = Text.inputNumber("Insira a quantidade de pontos de força");
                     
-                    if (attackPoints <= xpPoints) 
+                    if (attackPoints <= xpPoints && attackPoints > 0) 
                     {
                         this.attack += attackPoints;
                         xpPoints -= attackPoints;
