@@ -98,7 +98,7 @@ public class BattleSimulator
     private void healing() 
     {
         player.setHp(player.getHp() + 5); // Recupera pontos de vida
-        Text.showMessage("Você se curou!\nRecuperou 3 pontos de vida.");
+        Text.showMessage("Você se curou!\nRecuperou 5 pontos de vida.");
     }
 
     // Método para simular o ataque do inimigo
