@@ -34,7 +34,7 @@ public class Level
         if (choice.equals("Atacar o Executivo Corporativo")) 
         {
             // Cria o inimigo e exibe informações sobre ele
-            Enemy boss = new Enemy("Executivo Corporativo", 5, 30);
+            Enemy boss = new Enemy("Executivo Corporativo", textUtil.randomInt(3, 7), 30);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -105,7 +105,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Engenheira Louca", 7, 25);
+            Enemy boss = new Enemy("Engenheira Louca", textUtil.randomInt(5, 9), 25);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -156,7 +156,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Lenhadora Desonesta", 8, 30);
+            Enemy boss = new Enemy("Lenhadora Desonesta", textUtil.randomInt(6, 10), 30);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -212,7 +212,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Barão da Poluição", 10, 40);
+            Enemy boss = new Enemy("Barão da Poluição", textUtil.randomInt(8, 12), 40);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
