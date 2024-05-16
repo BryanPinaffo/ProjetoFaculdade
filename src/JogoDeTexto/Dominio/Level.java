@@ -48,6 +48,10 @@ public class Level
                 Text.showMessage("Recompensas do Nível 1: " + "\n\n+20 de Vida\n+5 de Força");
                 player.setHp(player.getHp() + 20);
                 player.setAttack(player.getAttack() + 5);
+
+                Text.showMessage("Experiência: 5");
+                player.setXp(player.getXp() + 5);
+
                 Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
             } 
             
@@ -68,8 +72,6 @@ public class Level
 
     public void level02(Player player) 
     {
-        Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
-
         Text.showMessage("Nível 2: As Ruínas Subterrâneas\n" +
                 "Descendo às profundezas da cidade, você se vê diante de um mundo subterrâneo de escuridão e desespero. " +
                 "As Ruínas Subterrâneas são um labirinto de túneis escuros e cavernas sinistras, onde resíduos tóxicos e criaturas aberrantes são comuns.\n" +
@@ -103,6 +105,10 @@ public class Level
                 Text.showMessage("Recompensas do Nível 2: " + "\n\n+25 de Vida\n+7 de Força");
                 player.setHp(player.getHp() + 25);
                 player.setAttack(player.getAttack() + 7);
+
+                Text.showMessage("Experiência: 10");
+                player.setXp(player.getXp() + 5);
+
                 Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
             } 
             
