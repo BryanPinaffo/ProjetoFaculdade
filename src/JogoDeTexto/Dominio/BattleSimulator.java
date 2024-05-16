@@ -4,7 +4,6 @@ public class BattleSimulator
 {
     private Player player;
     private Enemy enemy;
-    private int roundCount;
     private boolean canUseSpecialAttack;
     private Text textUtil;
 
@@ -13,7 +12,6 @@ public class BattleSimulator
     {
         this.player = player;
         this.enemy = enemy;
-        this.roundCount = 0;
         this.canUseSpecialAttack = true;
         this.textUtil = new Text();
     }
@@ -26,8 +24,6 @@ public class BattleSimulator
         // Loop até que o jogador ou o inimigo morra
         while (player.isAlive() && enemy.isAlive()) 
         {
-            roundCount++; // Incrementa a contagem de rodadas
-
             // Define as opções de ataque
             String[] attackOptions = canUseSpecialAttack ? new String[]{"Ataque Normal", "Ataque Especial", "Curar"} : new String[]{"Ataque Normal", "Curar"};
             String selectedAttack = Text.select("Escolha seu ataque", "Escolha uma ação:", attackOptions);
