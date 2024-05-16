@@ -6,8 +6,8 @@ public class Main {
     {
             try 
             {
-                    Player player = null;
-                    GameMenu.showMenu(player); 
+                Player player = null;
+                GameMenu.showMenu(player); 
             } 
             
             catch (Exception e) 

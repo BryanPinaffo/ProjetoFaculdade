@@ -48,9 +48,9 @@ public class GameMenu
             // Executar níveis do jogo
             level.level01(player);
             level.level02(player);
-            // level.level03(player);
-            // level.level04(player);
-            // level.level05(player);
+            level.level03(player);
+            level.level04(player);
+            level.levelFinal(player);
 
             Text.showMessage("Jogo concluído");
     }
