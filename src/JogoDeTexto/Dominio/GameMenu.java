@@ -38,8 +38,7 @@ public class GameMenu
 
             default:
                 // Tratamento de escolha inválida
-                Text.showMessage("Opção inválida. Tente novamente.");
-                showMenu(player);
+                System.exit(0);
             break;
         }
     }
@@ -66,8 +65,7 @@ public class GameMenu
 
            default:
                 // Tratamento de escolha inválida
-                Text.showMessage("Opção inválida. Tente novamente.");
-                showMenu(player);
+                System.exit(0);
             break;
        }
     }
