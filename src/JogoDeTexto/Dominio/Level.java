@@ -171,24 +171,62 @@ public class Level
         }
     }
 
-    /*
-
     public void level04(Player player) 
     {
+       Text.showMessage("Nível 4: O Céu Enegrecido\n" +
+                "À medida que você escala uma enorme montanha em busca de novos desafios, você encontra uma entrada aos céus. " +
+                "Uma paisagem sombria se revela diante de seus olhos. O Céu Enegrecido é um mar de nuvens negras e fumaça tóxica, " +
+                "onde a vida luta para sobreviver sob a sombra da poluição.\n" +
+                "Você é saudado pelos Pássaros da Resistência, uma aliança improvável de criaturas voadoras determinadas a lutar pela preservação " +
+                "do céu claro que um dia dominou o horizonte. Eles compartilham contos de voos interrompidos, ninhos destruídos e companheiros perdidos " +
+                "devido à poluição atmosférica, clamando por sua ajuda para confrontar o sinistro Barão da Poluição.\n" +
+                "Montado no líder dos Pássaros da Resistência, você voa pelos céus negros em busca do Barão da Poluição, " +
+                "e o encontra usando máquinas poluentes para atacar famílias de passarinhos, que voavam em busca de um abrigo para seus filhotes.\n" +
+                "Diante desta situação, você decide:");
+
+        String[] options = {"Abandonar o desafio e ir embora", "Enfrentar o Barão da Poluição"};
+        String choice = Text.select("Decisão", "O que você decide fazer?", options);
+
+        if (choice.equals("Abandonar o desafio e ir embora")) 
+        {
+            Text.showMessage("O líder dos pássaros se decepciona com sua atitude covarde e o joga das alturas como forma de vingança em nome de todos os pássaros. > Você morreu.");
+            System.exit(0);
+        } 
         
-        // Exibir informações do jogador
-        String playerInfo = textUtil.playerProfile(player);
-        JOptionPane.showMessageDialog(null, playerInfo, "Ficha do Jogador", JOptionPane.INFORMATION_MESSAGE);
+        else 
+        {
+            Enemy boss = new Enemy("Barão da Poluição", 10, 40);
+            String enemyInfo = textUtil.enemyEncounter(boss);
+            Text.showMessage(enemyInfo);
 
-        // Criar um inimigo para a fase 01
-        Enemy enemy = new Enemy("Esqueleto", 8, 50);
-        String enemyInfo = textUtil.enemyEncounter(enemy);
-        JOptionPane.showMessageDialog(null, enemyInfo, "Inimigo Encontrado!", JOptionPane.WARNING_MESSAGE);
+            BattleSimulator battleSimulator = new BattleSimulator(player, boss);
+            battleSimulator.startBattle();
 
-        // Iniciar batalha
-        BattleSimulator battleSimulator = new BattleSimulator(player, enemy, textUtil);
-        battleSimulator.startBattle();
+            if (player.isAlive()) 
+            {
+                Text.showMessage("Com um esforço final e um golpe certeiro, você derrota o Barão da Poluição, enviando-o de volta às sombras de onde veio. " +
+                        "A luz do sol rompe finalmente as nuvens, iluminando os céus enegrecidos da EcoMetrópole com sua radiância dourada, " +
+                        "trazendo esperança e renovação para todas as criaturas ameaçadas pela sua crueldade.");
+                
+                Text.showMessage("Recompensas do Nível 4: " + "\n\n+40 de Vida\n+10 de Força");
+                player.setHp(player.getHp() + 40);
+                player.setAttack(player.getAttack() + 10);
+
+                Text.showMessage("Experiência: 20");
+                player.setXp(player.getXp() + 5);
+
+                Text.showMessage(textUtil.playerProfile(player)); //exibe ficha do jogador
+            } 
+            
+            else 
+            {
+                Text.showMessage("Você foi derrotado pelo Barão da Poluição. Os céus continuam enegrecidos pela poluição.");
+                System.exit(0);
+            }
+        }
     }
+
+    /*
 
     public void levelFinal(Player player) 
     {
