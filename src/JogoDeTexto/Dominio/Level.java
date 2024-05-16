@@ -34,7 +34,7 @@ public class Level
         if (choice.equals("Atacar o Executivo Corporativo")) 
         {
             // Cria o inimigo e exibe informações sobre ele
-            Enemy boss = new Enemy("Executivo Corporativo", textUtil.randomInt(3, 7), 30);
+            Enemy boss = new Enemy("Executivo Corporativo", textUtil.randomInt(1, 6), 20);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -105,7 +105,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Engenheira Louca", textUtil.randomInt(5, 9), 25);
+            Enemy boss = new Enemy("Engenheira Louca", textUtil.randomInt(6, 9), 30);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -118,7 +118,7 @@ public class Level
                         "Sua jornada pela sustentabilidade continua...");
 
                 Text.showMessage("Recompensas do Nível 2: ");
-                int xpEarned = 10;
+                int xpEarned = 15;
                 player.setXp(player.getXp() + xpEarned);
 
                 Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
@@ -156,7 +156,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Lenhadora Desonesta", textUtil.randomInt(6, 10), 30);
+            Enemy boss = new Enemy("Lenhadora Desonesta", textUtil.randomInt(10, 12), 45);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -170,7 +170,7 @@ public class Level
                         "Você triunfou sobre a destruição ecológica neste capítulo de sua jornada...");
 
                 Text.showMessage("Recompensas do Nível 3: ");
-                int xpEarned = 10;
+                int xpEarned = 20;
                 player.setXp(player.getXp() + xpEarned);
 
                 Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
@@ -212,7 +212,7 @@ public class Level
         
         else 
         {
-            Enemy boss = new Enemy("Barão da Poluição", textUtil.randomInt(8, 12), 40);
+            Enemy boss = new Enemy("Barão da Poluição", textUtil.randomInt(13, 15), 70);
             String enemyInfo = textUtil.enemyEncounter(boss);
             Text.showMessage(enemyInfo);
 
@@ -226,7 +226,7 @@ public class Level
                         "trazendo esperança e renovação para todas as criaturas ameaçadas pela sua crueldade.");
                 
                 Text.showMessage("Recompensas do Nível 4: ");
-                int xpEarned = 10;
+                int xpEarned = 20;
                 player.setXp(player.getXp() + xpEarned);
 
                 Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
@@ -272,7 +272,7 @@ public class Level
         
         else
         {
-            Enemy finalBoss = new Enemy("Rainha das Trevas", 15, 50);
+            Enemy finalBoss = new Enemy("Rainha das Trevas", textUtil.randomInt(16, 20), 100);
             String enemyInfo = textUtil.enemyEncounter(finalBoss);
             Text.showMessage(enemyInfo);
 
@@ -296,7 +296,7 @@ public class Level
                         "e renovação para todos os seus habitantes.\n[fim de jogo]");
 
                 Text.showMessage("Recompensas Finais: ");
-                int xpEarned = 10;
+                int xpEarned = 25;
                 player.setXp(player.getXp() + xpEarned);
 
                 Text.showMessage("Você ganhou " + xpEarned +" pontos de experiência");
