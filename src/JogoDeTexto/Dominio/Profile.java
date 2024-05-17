@@ -46,8 +46,17 @@ public class Profile
             playerAge = Text.showInput("Qual é a sua idade?");
             if(playerAge != null && !playerAge.trim().isEmpty())
             {
-                player.setAge(playerAge);
-                validAge = true;
+                try
+                {
+                    int age = Integer.parseInt(playerAge);
+                    player.setAge(playerAge);
+                    validAge = true;
+                }
+
+                catch (NumberFormatException e) 
+                {
+                    Text.showMessage("Idade inválida. Por favor, insira um número válido.");
+                }
             }
 
             else
