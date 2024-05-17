@@ -25,7 +25,7 @@ public class Profile
         while (!validName) 
         { 
             playerName = Text.showInput("Qual é o seu nome?");
-            if(playerName != null)
+            if(playerName != null && !playerName.trim().isEmpty())
             {
                 player.setName(playerName);
                 validName = true;
