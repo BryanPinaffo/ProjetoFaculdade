@@ -54,7 +54,7 @@ public class Profile
 
             default:
                 Text.showMessage("Ação inválida. Escolha uma arma.");
-            break;
+                throw new AssertionError();
         }
         player.setWeapon(selectedWeapon);
 
