@@ -63,38 +63,29 @@ public class Profile
 
         // Solicita a escolha de uma arma e ajusta os atributos conforme a arma escolhida
         String[] weaponOptions = {"Espada", "Arco", "Adaga"};
-        String selectedWeapon = "";
-        boolean validSelection = false;
-
-        while(!validSelection)
-        {
-            selectedWeapon = Text.select("Escolha de Arma", "Escolha uma arma:", weaponOptions);
+        String selectedWeapon = Text.getValidSelection("Escolha de Arma", "Escolha uma arma:", weaponOptions);
 
             switch (selectedWeapon) 
             {
                 case "Espada":
                     player.setAttack(player.getAttack() + 5);
                     player.setHp(player.getHp() + 3);
-                    validSelection = true;
                 break;
 
                 case "Arco":
                     player.setAttack(player.getAttack() + 3);
                     player.setHp(player.getHp() + 5);
-                    validSelection = true;
                 break;
 
                 case "Adaga":
                     player.setAttack(player.getAttack() + 4);
                     player.setHp(player.getHp() + 4);
-                    validSelection = true;
                 break;
 
                 default:
                     Text.showMessage("Ação inválida. Escolha uma arma.");
             }
             player.setWeapon(selectedWeapon);
-        }
 
         // Exibe mensagens confirmando a escolha da arma e inicia a jornada do jogador
         String weaponMessage = "Uau, você escolheu " + selectedWeapon + ", é uma sábia escolha!";

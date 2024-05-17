@@ -3,7 +3,6 @@ import javax.swing.JOptionPane;
 
 public class Text 
 {
-    // Método para exibir uma seleção com opções
     // Método para exibir uma seleção com opções e retornar a opção selecionada pelo usuário
     public static String select(String title, String msg, String[] options) 
     {
@@ -18,6 +17,25 @@ public class Text
         {
             return ""; // Retorna uma string vazia se o usuário cancelar a seleção
         }
+    }
+
+    // Método para obter uma seleção válida
+    public static String getValidSelection(String title, String msg, String[] options) 
+    {
+        String selectedOption;
+        do 
+        {
+            selectedOption = select(title, msg, options);
+            
+            if(selectedOption.isEmpty()) 
+            {
+                Text.showMessage("Seleção inválida. Por favor, escolha uma opção.");
+            }
+        } 
+        
+        while (selectedOption.isEmpty());
+
+        return selectedOption;
     }
 
     // Método para exibir uma mensagem simples

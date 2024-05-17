@@ -28,7 +28,7 @@ public class Level
 
         // Opções de ação para o jogador
         String[] options = {"Atacar o Executivo Corporativo", "Se esconder"};
-        String choice = Text.select("Escolha sua ação", "O que você deseja fazer?", options);
+        String choice = Text.getValidSelection("Escolha sua ação", "O que você deseja fazer?", options);
 
         // Condicional verifica a escolha do jogador
         switch (choice) 
@@ -47,7 +47,7 @@ public class Level
                 if (player.isAlive()) 
                 {
                     // Opções finais de decisão para o jogador
-                    String finalChoice = Text.select("Decisão final", "O Executivo Corporativo oferece riqueza e poder em troca de sua lealdade. O que você faz?", new String[]{"Sucumbir à ganância", "Atacar o inimigo"});
+                    String finalChoice = Text.getValidSelection("Decisão final", "O Executivo Corporativo oferece riqueza e poder em troca de sua lealdade. O que você faz?", new String[]{"Sucumbir à ganância", "Atacar o inimigo"});
                     
                     switch (finalChoice) 
                     {
@@ -103,7 +103,7 @@ public class Level
                         "Você se une aos refugiados, para fortalecer suas defesas, reparar equipamentos e treinar os refugiados em técnicas de combate enquanto busca pistas sobre a Engenheira Louca e suas atividades poluidoras.");
 
         String[] options = {"Desistir de enfrentá-la", "Enfrentar a Engenheira Louca"};
-        String choice = Text.select("Decisão", "O que você decide fazer?", options);
+        String choice = Text.getValidSelection("Decisão", "O que você decide fazer?", options);
 
         switch (choice) 
         {
@@ -153,7 +153,7 @@ public class Level
                         "Você se depara com uma Lenhadora Desonesta, desmatando todo o meio ambiente!!!");
 
         String[] options = {"Desistir do embate", "Atacar a Lenhadora Desonesta"};
-        String choice = Text.select("Decisão", "O que você decide fazer?", options);
+        String choice = Text.getValidSelection("Decisão", "O que você decide fazer?", options);
 
         switch (choice) 
         {
@@ -207,7 +207,7 @@ public class Level
                         "Diante desta situação, você decide:");
 
         String[] options = {"Abandonar o desafio e ir embora", "Enfrentar o Barão da Poluição"};
-        String choice = Text.select("Decisão", "O que você decide fazer?", options);
+        String choice = Text.getValidSelection("Decisão", "O que você decide fazer?", options);
 
         switch (choice) 
         {
@@ -263,7 +263,7 @@ public class Level
                         "e levar a EcoMetrópole de volta à luz da esperança?");
 
         String[] options = {"Não, abandonar a batalha", "Sim, enfrentar o meu inimigo"};
-        String choice = Text.select("Decisão", "O que você decide fazer?", options);
+        String choice = Text.getValidSelection("Decisão", "O que você decide fazer?", options);
 
         switch (choice) 
         {
