@@ -41,33 +41,39 @@ public class Level
             // Inicia a batalha entre o jogador e o inimigo
             BattleSimulator battleSimulator = new BattleSimulator(player, boss);
             battleSimulator.startBattle();
-        }
 
-        // Verifica se o jogador está vivo após a batalha
-        if (player.isAlive()) 
-        {
-            // Opções finais de decisão para o jogador
-            String finalChoice = Text.select("Decisão final", "O Executivo Corporativo oferece riqueza e poder em troca de sua lealdade. O que você faz?", new String[]{"Sucumbir à ganância", "Atacar o inimigo"});
-            
-            // Condicional baseada na escolha final do jogador
-            if (finalChoice.equals("Atacar o inimigo")) 
+            // Verifica se o jogador está vivo após a batalha
+            if (player.isAlive()) 
             {
-                // Mensagens de vitória e recompensas para o jogador
-                Text.showMessage("Você não se deixa ser seduzido pelas riquezas oferecidas pelo Executivo Corporativo, golpeando-o com sua arma assim que seu inimigo demonstrou ter abaixado a guarda. " +
-                        "Todas as suas criaturas mutantes, que dependiam de seu poder, sentem suas forças se esvaindo, morrendo logo em seguida.\n" +
-                        "Parabéns, você venceu o Boss 01 e agora os trabalhadores locais poderão voltar a viver suas vidas sem serem aterrorizados pela crueldade do Executivo Corporativo e de seus servos.");
+                // Opções finais de decisão para o jogador
+                String finalChoice = Text.select("Decisão final", "O Executivo Corporativo oferece riqueza e poder em troca de sua lealdade. O que você faz?", new String[]{"Sucumbir à ganância", "Atacar o inimigo"});
                 
-                // Entrega as recompensas para o jogador
-                int xpEarned = 10;
-                BattleSimulator reward = new BattleSimulator(player, null);
-                reward.rewardBattle(xpEarned);
-            } 
-            
-            else 
-            
+                // Condicional baseada na escolha final do jogador
+                if (finalChoice.equals("Atacar o inimigo")) 
+                {
+                    // Mensagens de vitória e recompensas para o jogador
+                    Text.showMessage("Você não se deixa ser seduzido pelas riquezas oferecidas pelo Executivo Corporativo, golpeando-o com sua arma assim que seu inimigo demonstrou ter abaixado a guarda. " +
+                            "Todas as suas criaturas mutantes, que dependiam de seu poder, sentem suas forças se esvaindo, morrendo logo em seguida.\n" +
+                            "Parabéns, você venceu o Boss 01 e agora os trabalhadores locais poderão voltar a viver suas vidas sem serem aterrorizados pela crueldade do Executivo Corporativo e de seus servos.");
+                    
+                    // Entrega as recompensas para o jogador
+                    int xpEarned = 10;
+                    BattleSimulator reward = new BattleSimulator(player, null);
+                    reward.rewardBattle(xpEarned);
+                } 
+                
+                else 
+                {
+                    // Mensagem de morte caso o jogador escolha a opção errada
+                    Text.showMessage("Você foi enganado pelas falácias do Executivo Corporativo para que ganhasse tempo. Seus servos, as criaturas mutantes, lhe cercam e o atacam com diversos golpes. > Você morreu.");
+                    GameMenu.defeatMenu(player);
+                }
+            }
+
+            else
             {
-                // Mensagem de morte caso o jogador escolha a opção errada
-                Text.showMessage("Você foi enganado pelas falácias do Executivo Corporativo para que ganhasse tempo. Seus servos, as criaturas mutantes, lhe cercam e o atacam com diversos golpes. > Você morreu.");
+                // Mensagem de morte caso o jogador esteja morto
+                Text.showMessage("Você corre para dentro de uma fábrica antiga e abandonada, para fugir do combate, mas é cercado por diversas criaturas mutantes e é atacado. > Você morreu.");
                 GameMenu.defeatMenu(player);
             }
         }
@@ -132,7 +138,8 @@ public class Level
                 "Você enfrenta animais selvagens, criaturas mágicas e armadilhas naturais enquanto navega pelas densas florestas e pântanos sombrios.\n" +
                 "Ao longo do caminho, você encontra os Guardiões da Floresta, ancestrais sábios que protegem a terra há gerações. " +
                 "Eles compartilham suas preocupações sobre o desmatamento desenfreado e a caça predatória que ameaçam a existência da floresta. " +
-                "Uma chama se incendeia em seu peito, e você sabe o que deve ser feito!");
+                "Uma chama se incendeia em seu peito, e você sabe o que deve ser feito!" + 
+                "Você se depara com uma Lenhadora Desonesta, desmatando todo o meio ambiente!!!");
 
         String[] options = {"Desistir do embate", "Atacar a Lenhadora Desonesta"};
         String choice = Text.select("Decisão", "O que você decide fazer?", options);
