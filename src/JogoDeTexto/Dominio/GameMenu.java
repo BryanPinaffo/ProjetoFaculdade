@@ -6,7 +6,7 @@ public class GameMenu
     public static void showMenu(Player player)
     {
         // Opções do menu
-        String[] options = {"Novo Jogo","Jogar","Sair"};
+        String[] options = {"Novo Jogo","Sair"};
         String choice = Text.select("Menu", "Escolha uma opção", options);
 
         // Switch-case para tratar as escolhas do jogador no menu
@@ -17,23 +17,10 @@ public class GameMenu
                 newGame();
             break;
 
-            case "Jogar":
-                // Continua um jogo salvo
-                if (player != null)
-                {
-                    continueGame();
-                }
-                
-                else
-                {
-                    Text.showMessage("Não há jogo salvo encontrado.");
-                    showMenu(player);
-                }
-            break;
-
             case "Sair":
                 // Sai do jogo
                 Text.showMessage("Obrigado por jogar!");
+                System.exit(0);
             break;
 
             default:
@@ -88,12 +75,5 @@ public class GameMenu
             level.levelFinal(player);
 
             Text.showMessage("Jogo concluído");
-    }
-    
-    // Método para continuar um jogo salvo
-    private static void continueGame()
-    {
-        Level level = new Level();
-        newGame();
     }
 }

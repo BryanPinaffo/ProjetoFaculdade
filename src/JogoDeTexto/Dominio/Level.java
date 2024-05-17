@@ -68,9 +68,6 @@ public class Level
                             Text.showMessage("Você foi enganado pelas falácias do Executivo Corporativo para que ganhasse tempo. Seus servos, as criaturas mutantes, lhe cercam e o atacam com diversos golpes. > Você morreu.");
                             GameMenu.defeatMenu(player);
                         break;
-
-                        default:
-                            throw new AssertionError();
                     }
                 }
 
@@ -87,9 +84,6 @@ public class Level
                 Text.showMessage("Você corre para dentro de uma fábrica antiga e abandonada, para fugir do combate, mas é cercado por diversas criaturas mutantes e é atacado. > Você morreu.");
                 GameMenu.defeatMenu(player);
             break;
-            
-            default:
-                throw new AssertionError();
         }
     } 
 
@@ -136,9 +130,6 @@ public class Level
                     GameMenu.defeatMenu(player);
                 }
             break;
-            
-            default:
-                throw new AssertionError();
         }
     }
 
@@ -187,9 +178,6 @@ public class Level
                     GameMenu.defeatMenu(player);
                 }
             break;
-            
-            default:
-                throw new AssertionError();
         }
     }
 
@@ -241,9 +229,6 @@ public class Level
                     GameMenu.defeatMenu(player);
                 }
             break;
-
-            default:
-                throw new AssertionError();
         }
     }
 
@@ -315,9 +300,6 @@ public class Level
                     GameMenu.defeatMenu(player);
                 }
             break;
-            
-            default:
-                throw new AssertionError();
         }
     }
 }
