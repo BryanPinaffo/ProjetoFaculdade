@@ -43,7 +43,7 @@ public class Player
         {
             Text.showMessage("Você tem " + xpPoints + " pontos de experiência para distribuir.");
             String[] options = {"Aumentar Vida", "Aumentar Força"};
-            String choice = Text.select("Distribuição de Pontos", "Como você quer distribuir seus pontos?", options);
+            String choice = Text.getValidSelection("Distribuição de Pontos", "Como você quer distribuir seus pontos?", options);
 
             switch (choice) 
             {

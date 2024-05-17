@@ -33,7 +33,7 @@ public class Profile
 
             else
             {
-                Text.showMessage("Nome inválido. Por favor, insira um nome válido.");
+                Text.showMessage("Nome inválido. Por favor, insira um valor válido.");
             }
         }
         
@@ -44,7 +44,7 @@ public class Profile
         while (!validAge) 
         { 
             playerAge = Text.showInput("Qual é a sua idade?");
-            if(playerAge != null)
+            if(playerAge != null && !playerAge.trim().isEmpty())
             {
                 player.setAge(playerAge);
                 validAge = true;
@@ -52,7 +52,7 @@ public class Profile
 
             else
             {
-                Text.showMessage("idade inválido. Por favor, insira um nome válido.");
+                Text.showMessage("Idade inválida. Por favor, insira um valor válido.");
             }
         }
         

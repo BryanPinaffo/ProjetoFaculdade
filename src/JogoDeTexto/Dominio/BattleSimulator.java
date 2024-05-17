@@ -26,7 +26,7 @@ public class BattleSimulator
         {
             // Define as opções de ataque
             String[] attackOptions = canUseSpecialAttack ? new String[]{"Ataque Normal", "Ataque Especial", "Curar"} : new String[]{"Ataque Normal", "Curar"};
-            String selectedAttack = Text.select("Escolha seu ataque", "Escolha uma ação:", attackOptions);
+            String selectedAttack = Text.getValidSelection("Escolha seu ataque", "Escolha uma ação:", attackOptions);
 
             // Switch-case para realizar a ação escolhida pelo jogador
             switch (selectedAttack) 
@@ -54,7 +54,6 @@ public class BattleSimulator
                 
                 default:
                     Text.showMessage("Ação inválida. Tente novamente.");
-                    throw new AssertionError();
             }
 
             // Verifica se o inimigo foi derrotado
