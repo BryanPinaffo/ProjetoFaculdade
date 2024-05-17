@@ -54,7 +54,7 @@ public class BattleSimulator
                 
                 default:
                     Text.showMessage("Ação inválida. Tente novamente.");
-                break;
+                    throw new AssertionError();
             }
 
             // Verifica se o inimigo foi derrotado
