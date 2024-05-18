@@ -122,6 +122,7 @@ public class Level
                     int xpEarned = 15;
                     BattleSimulator reward = new BattleSimulator(player, null);
                     reward.rewardBattle(xpEarned);
+                    break;
                 } 
                 
                 else 
@@ -170,6 +171,7 @@ public class Level
                     int xpEarned = 20;
                     BattleSimulator reward = new BattleSimulator(player, null);
                     reward.rewardBattle(xpEarned);
+                    break;
                 } 
                 
                 else 
@@ -221,6 +223,7 @@ public class Level
                     int xpEarned = 20;
                     BattleSimulator reward = new BattleSimulator(player, null);
                     reward.rewardBattle(xpEarned);
+                    break;
                 } 
                 
                 else 
@@ -292,6 +295,7 @@ public class Level
 
                     // Exibe o perfil atualizado do jogador
                     Text.showMessage("Score final do Jogador: \n" + textUtil.playerProfile(player));
+                    break;
                 } 
                 
                 else 
